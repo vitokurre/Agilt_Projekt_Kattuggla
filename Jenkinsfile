@@ -12,11 +12,6 @@ pipeline {
             }
             post {
                 always {
-                    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-                }
-            }
-            post {
-                always {
                     script {
                           step(
                                 [
