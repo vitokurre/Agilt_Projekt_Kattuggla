@@ -17,6 +17,20 @@ User Can Access Website And See Front Page
     Go To Web Page
 
 
+User Can Log In
+
+
+User Can Create Model
+
+
+User Can Delete Model
+
+
+User Can Log out
+
+
+
+
 
 
 
