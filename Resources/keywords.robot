@@ -14,5 +14,9 @@ Log in User
     Click Element   //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]/div
     Wait Until Page Contains  Welcome to Labelf!
 
+Create A Model
+    Click Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
+    Wait Until Page Contains  Create your own model from scratch.
+
 End Web Test
     Close Browser
