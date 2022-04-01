@@ -6,8 +6,8 @@ Suite Setup    Begin Web Test
 Suite Teardown  End Web Test
 
 *** Variables ***
-${BROWSER}  headlesschrome
-${URL}  https://www.labelf.ai/
+${BROWSER}  chrome
+${URL}  https://stag.labelf.ai/login
 
 *** Test Cases ***
 
@@ -17,16 +17,16 @@ User Can Access Website And See Front Page
     Go To Web Page
 
 
-User Can Log In
+#User Can Log In
 
 
-User Can Create Model
+#User Can Create Model
 
 
-User Can Delete Model
+#User Can Delete Model
 
 
-User Can Log out
+#User Can Log out
 
 
 
