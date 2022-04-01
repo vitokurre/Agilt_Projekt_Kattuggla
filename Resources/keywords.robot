@@ -15,8 +15,7 @@ Log in User
     Wait Until Page Contains  Welcome to Labelf!
 
 Create A Model
-    Click Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
-    #its works but its 50/50 if its works
+    Click Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
     Wait Until Page Contains  Create your own model from scratch.
 
 End Web Test
