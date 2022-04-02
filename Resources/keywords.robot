@@ -16,7 +16,7 @@ Log in User
 
 Create A Model
     Click Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
-    #Now its works
+    #Now its not working
     Wait Until Page Contains  Create your own model from scratch.
 
 End Web Test
