@@ -20,6 +20,9 @@ User Can Access Website And See Front Page
 User Can Log In
     Log in User
 
+User Can Change Workspace
+    Select Team Kattugla As Workspace
+
 User Can Create Model
     Create A Model
 
