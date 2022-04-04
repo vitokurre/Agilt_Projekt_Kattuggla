@@ -18,6 +18,11 @@ Create A Model
     Click Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
     #dont work
     Wait Until Page Contains  Create your own model from scratch.
+    Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/button/div
+    Wait Until Page Contains  Select an existing dataset or upload a new one
+    Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
+    Wait Until Page Contains  Please click on the column containing the text
+
 
 End Web Test
     Close Browser
