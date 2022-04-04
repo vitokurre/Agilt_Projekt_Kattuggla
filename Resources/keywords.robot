@@ -19,6 +19,7 @@ Select Team Kattugla As Workspace
     Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/i
     Wait Until Page Contains Element  //*[@id="app"]/div[1]/div
     Click Element  //*[@id="app"]/div[1]/div/div[2]/div[4]/a/div[1]/div
+    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/i
     Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/i
 
 Create A Model
