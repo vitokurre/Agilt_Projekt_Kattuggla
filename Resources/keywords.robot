@@ -15,6 +15,7 @@ Log in User
     Wait Until Page Contains  Welcome to Labelf!
     Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/i
     Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/i
+    #Är inne i rullgardinen och försöker välja Team Kattuggla
     Wait Until Page Contains Element  //*[@id="app"]/div[3]/div/div[2]/div[4]/a/div[1]/div
     Click Element  //*[@id="app"]/div[3]/div/div[2]/div[4]/a/div[1]/div
     Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
