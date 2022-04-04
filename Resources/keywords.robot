@@ -20,9 +20,9 @@ Select Team Kattugla As Workspace
     #Är inne i rullgardinen och försöker välja Team Kattuggla
     Wait Until Page Contains Element  //*[@id="app"]/div[3]/div/div[2]/div[4]/a/div[1]/div
     Click Element  //*[@id="app"]/div[3]/div/div[2]/div[4]/a/div[1]/div
-    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
 
 Create A Model
+    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
     Click Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
     Wait Until Page Contains  Create your own model from scratch.
     Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/button/div
