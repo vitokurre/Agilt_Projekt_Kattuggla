@@ -20,9 +20,11 @@ ${NEWMODELBUTTON}  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
 ${SETUPCONTINUE}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/button/div
 ${DATASETCONTINUE}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
 ${COLUMNCONTINUE}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button/div
-#${URL}
-#${URL}
-#${URL}
+${MODELMENU}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
+${CONTINUESCRATCH}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button/div
+${DELETE}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[1]/div
+${SUREDELETE}  //*[@id="app"]/div[3]/div/div/div[3]/button/div
+
 
 
 
@@ -46,7 +48,8 @@ User Can Create Model
     Create A Model
 
 
-#User Can Delete Model
+User Can Delete Model
+    Delete Model
 
 
 #User Can Log out
