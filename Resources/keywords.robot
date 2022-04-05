@@ -47,8 +47,9 @@ Create A Model
 
 Delete Model
     Wait Until Page Contains  My Models
+    Wait Until Page Contains Element  ${MODELMENU}
     Click Element  ${MODELMENU}
-    Wait Until Page Contains Element ${DELETE}
+    Wait Until Page Contains Element  ${DELETE}
     Click Element  ${DELETE}
     Wait Until Page Contains Element  ${SUREDELETE}
     Click Element  ${SUREDELETE}
