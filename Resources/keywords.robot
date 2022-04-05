@@ -33,6 +33,9 @@ Create A Model
     Wait Until Page Contains  Synthetic generic support ticket example data that has half the dataset labeled
     Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
     Wait Until Page Contains  Please click on the column containing the text
+    Wait Until Page Contains Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button/div
+    Sleep  1s
+    Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button/div
 
 
 End Web Test
