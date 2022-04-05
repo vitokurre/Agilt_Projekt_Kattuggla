@@ -22,23 +22,23 @@ Select Team Kattugla As Workspace
     Click Element  ${MAINMENUTEAMKATTUGGLA}
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
-
-    #${ATTRIBUTSTRINGTEAMKATTUGGLA}= Get Element Attribute  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/span Team Kattuggla
+    #${ATTRIBUTSTRINGTEAMKATTUGGLA}= Get Element Attribute  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/span Team Kattuggla här vill vi verfiera namnet Team Kattuggla
 
 Create A Model
-     #//*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div new modelknapp
-    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
-    Click Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
+    Sleep  1s
+    Wait Until Page Contains Element  ${NEWMODELBUTTON}
+    Click Element  ${NEWMODELBUTTON}
     Wait Until Page Contains  Create your own model from scratch.
-    Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/button/div
+    Wait Until Page Contains Element  ${SETUPCONTINUE}
+    Click Element  ${SETUPCONTINUE}
     Wait Until Page Contains  Select an existing dataset or upload a new one
     Wait Until Page Contains  Synthetic generic support ticket example data that has half the dataset labeled
-    Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
+    Click Element  ${DATASETCONTINUE}
     Wait Until Page Contains  Please click on the column containing the text
-    Wait Until Page Contains Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button/div
+    Wait Until Page Contains Element  ${COLUMNCONTINUE}
     Sleep  1s
-    Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button/div
-    Wait Until Page Contains  Setup
+    Click Element  ${COLUMNCONTINUE}
+    Wait Until Page Contains  Name your model
 
 End Web Test
     Close Browser
