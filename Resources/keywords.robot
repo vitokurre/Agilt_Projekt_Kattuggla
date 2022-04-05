@@ -26,8 +26,7 @@ Select Team Kattugla As Workspace
     #${ATTRIBUTSTRINGTEAMKATTUGGLA}= Get Element Attribute  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/span Team Kattuggla
 
 Create A Model
-    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
-                                      //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div new modelknapp
+     #//*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div new modelknapp
     Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
     Click Element  //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
     Wait Until Page Contains  Create your own model from scratch.
