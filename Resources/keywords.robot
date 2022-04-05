@@ -11,11 +11,11 @@ Go To Web Page
 Log in User
     Input Text  ${MAIL}   checdd@gmail.com
     Input Text  ${PASSWORD}  kufowo92
+    Click Element  ${COOKIEDOWN}
     Click Element   ${LOGINBUTTON}
     Wait Until Page Contains  Welcome to Labelf!
 
 Select Team Kattugla As Workspace
-    Click Element  ${COOKIEDOWN}
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
     Wait Until Page Contains Element  ${MAINMENULIST}
