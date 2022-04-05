@@ -1,10 +1,11 @@
 *** Keywords ***
 Begin Web Test
     Open Browser  about:blank  ${BROWSER}
+    Set Window Size  1920  1080
+    Maximize Browser Window
 
 Go To Web Page
-    Maximize Browser Window
-    Go To  ${URL}
+    Go to  ${URL}
     Wait Until Page Contains Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]
 
 Log in User
