@@ -55,5 +55,12 @@ Delete Model
     Click Element  ${SUREDELETE}
     Sleep  1s
 
+Log Out User
+    Wait Until Page Contains Element  ${USERACCOUNT}
+    Click Element  ${USERACCOUNT}
+    Wait Until Page Contains Element  ${ACCOUNTLIST}
+    Click Element  ${LOGOUT}
+    Location Should Be  ${URL}
+
 End Web Test
     Close Browser

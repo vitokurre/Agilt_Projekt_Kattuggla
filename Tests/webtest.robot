@@ -24,7 +24,10 @@ ${MODELMENU}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/d
 ${CONTINUESCRATCH}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button/div
 ${DELETE}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[1]/div
 ${SUREDELETE}  //*[@id="app"]/div[3]/div/div/div[3]/button/div
-
+#Zheng log out code
+${USERACCOUNT}  //*[@id="app"]/div[6]/div[1]/nav/div/div[4]/div/button/div/div/span
+${ACCOUNTLIST}  //*[@id="app"]/div[5]/div
+${LOGOUT}  //*[@id="app"]/div[5]/div/div[3]/div/a/div[1]/div
 
 
 
@@ -52,7 +55,8 @@ User Can Delete Model
     Delete Model
 
 
-#User Can Log out
+User Can Log out
+    Log Out User
 
 
 
