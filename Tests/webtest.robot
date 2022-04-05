@@ -15,7 +15,7 @@ ${LOGINBUTTON}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]/div
 ${MAINMENU}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/i
 ${MAINMENULIST}  //*[@id="app"]/div[1]/div
 ${MAINMENUTEAMKATTUGGLA}  //*[@id="app"]/div[1]/div/div[2]/div[4]/a/div[1]/div
-#${URL}
+${ATTRIBUTSTRINGTEAMKATTUGGLA}
 #${URL}
 #${URL}
 #${URL}
