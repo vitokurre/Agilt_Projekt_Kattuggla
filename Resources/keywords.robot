@@ -18,8 +18,10 @@ Select Team Kattuggla As Workspace
     Sleep  1s
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
+    Sleep  1s
     Wait Until Page Contains Element  ${MAINMENULIST}
     Click Element  ${MAINMENUTEAMKATTUGGLA}
+    Sleep  1s
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
     Sleep  1s
