@@ -1,7 +1,6 @@
 *** Keywords ***
 Begin Web Test
     Open Browser  about:blank  ${BROWSER}
-    Set Window Size  1920  1080
     Maximize Browser Window
 
 Go To Web Page
@@ -15,14 +14,18 @@ Log in User
     Click Element   ${LOGINBUTTON}
     Wait Until Page Contains  Welcome to Labelf!
 
-Select Team Kattugla As Workspace
+Select Team Kattuggla As Workspace
+    Sleep  1s
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
     Wait Until Page Contains Element  ${MAINMENULIST}
     Click Element  ${MAINMENUTEAMKATTUGGLA}
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
-    #${ATTRIBUTSTRINGTEAMKATTUGGLA}= Get Element Attribute  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/span Team Kattuggla här vill vi verfiera namnet Team Kattuggla
+    Sleep  1s
+    Wait Until Page Contains Element  ${ATTRIBUTSTRINGTEAMKATTUGGLA}
+    Sleep  1s
+    Element Text Should Be  ${ATTRIBUTSTRINGTEAMKATTUGGLA}  TEAM KATTUGGLA
 
 Create A Model
     Sleep  1s
@@ -51,11 +54,13 @@ Delete Model
     Click Element  ${MODELMENU}
     Wait Until Page Contains Element  ${DELETE}
     Click Element  ${DELETE}
+    Sleep  1s
     Wait Until Page Contains Element  ${SUREDELETE}
     Click Element  ${SUREDELETE}
     Sleep  1s
 
 Log Out User
+    Sleep  1s
     Wait Until Page Contains Element  ${USERACCOUNT}
     Click Element  ${USERACCOUNT}
     Wait Until Page Contains Element  ${ACCOUNTLIST}
