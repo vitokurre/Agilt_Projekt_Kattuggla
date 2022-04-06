@@ -6,7 +6,7 @@ Suite Setup    Begin Web Test
 Suite Teardown  End Web Test
 
 *** Variables ***
-${BROWSER}  chrome
+${BROWSER}  headlesschrome
 ${URL}  https://stag.labelf.ai/login
 ${MAIL}  //*[@id="app"]/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input
 ${PASSWORD}  //*[@id="password"]
