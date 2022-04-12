@@ -8,53 +8,44 @@ Suite Teardown  End Web Test
 
 *** Keywords ***
 
+
+
+
+
 *** Variables ***
 
 *** Test Cases ***
 
 
 
-User Can Log In And Rent A Car
-    [Documentation]  Once accessing the website; rent a car and confirm booking
-    [Tags]  VG_test
-    Given User Is Logged In
-    When User Books Car
-    And User Pays With Creditcard
-    Then Car Has Been Booked
+#User Can Log In And Rent A Car
+#    [Documentation]  Once accessing the website; rent a car and confirm booking
+#    [Tags]  VG_test
+#    Given User Is Logged In
+#    When User Books Car
+#    And User Pays With Creditcard
+#    Then Car Has Been Booked
 
 
-
-
-User Can Access Website And See Front Page
-    [Documentation]  Once accessing the website; being able to see the frontpage
-    [Tags]  TestJenkins
+User is logged in; have changed workspace and created a model; ready to train a model.
+    [Documentation]  Once logged in; being able to change workspace
+    [Tags]  StartUp
     Go To Web Page
-
-User Can Log In
-    [Documentation]  Once accessing the website; user can log in
-    [Tags]  Account
     Log in User
-
-User Can Change Workspace
-    [Documentation]  Once user is logged in; being able to change workspace
-    [Tags]  Workspace
     Select Team Kattuggla As Workspace
-
-User Can Create Model
-    [Documentation]  Once workspace is changed; being able to create model
-    [Tags]  Model
     Create A Model
 
-User Can Delete Model
+
+This is Kat 50 task text
     [Documentation]  Once a model is created; being able to delete a model
     [Tags]  Model
     Delete Model
 
-User Can Log out
-    [Documentation]  Once user is logged in; being able to log out
-    [Tags]  Account
-    Log Out User
 
+User logs out
+    [Documentation]  Once user is finished with her work; being able to log out
+    [Tags]  LogsOut
+    Log Out User
 
 
 
