@@ -8,8 +8,8 @@ Go To Web Page
     Wait Until Page Contains Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]
 
 Log in User
-    Input Text  ${MAIL}   checdd@gmail.com
-    Input Text  ${PASSWORD}  kufowo92
+    Input Text  ${MAIL}   jakob.nilsson@iths.se
+    Input Text  ${PASSWORD}  44321jJa
     Click Element  ${COOKIEDOWN}
     Click Element   ${LOGINBUTTON}
     Wait Until Page Contains  Welcome to Labelf!
