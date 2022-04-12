@@ -12,6 +12,19 @@ Suite Teardown  End Web Test
 
 *** Test Cases ***
 
+
+
+User Can Log In And Rent A Car
+    [Documentation]  Once accessing the website; rent a car and confirm booking
+    [Tags]  VG_test
+    Given User Is Logged In
+    When User Books Car
+    And User Pays With Creditcard
+    Then Car Has Been Booked
+
+
+
+
 User Can Access Website And See Front Page
     [Documentation]  Once accessing the website; being able to see the frontpage
     [Tags]  TestJenkins
