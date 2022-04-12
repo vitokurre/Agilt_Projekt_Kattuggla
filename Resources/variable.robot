@@ -1,10 +1,3 @@
-*** Settings ***
-Documentation  Testing labelf
-Resource  ../Resources/keywords.robot
-Library  SeleniumLibrary
-Suite Setup    Begin Web Test
-Suite Teardown  End Web Test
-
 *** Variables ***
 ${BROWSER}  chrome
 ${URL}  https://stag.labelf.ai/login
@@ -27,42 +20,6 @@ ${ATTRIBUTSTRINGTEAMKATTUGGLA}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/
 ${USERACCOUNT}  //*[@id="app"]/div[6]/div[1]/nav/div/div[4]/div/button/div/div/span
 ${ACCOUNTLIST}  //*[@id="app"]/div[5]/div
 ${LOGOUT}  //*[@id="app"]/div[5]/div/div[3]/div/a/div[1]/div
-
-*** Test Cases ***
-
-User Can Access Website And See Front Page
-    [Documentation]  Once accessing the website; being able to see the frontpage
-    [Tags]  TestJenkins
-    Go To Web Page
-
-User Can Log In
-    [Documentation]  Once accessing the website; user can log in
-    [Tags]  Account
-    Log in User
-
-User Can Change Workspace
-    [Documentation]  Once user is logged in; being able to change workspace
-    [Tags]  Workspace
-    Select Team Kattuggla As Workspace
-
-User Can Create Model
-    [Documentation]  Once workspace is changed; being able to create model
-    [Tags]  Model
-    Create A Model
-
-User Can Delete Model
-    [Documentation]  Once a model is created; being able to delete a model
-    [Tags]  Model
-    Delete Model
-
-User Can Log out
-    [Documentation]  Once user is logged in; being able to log out
-    [Tags]  Account
-    Log Out User
-
-
-
-
 
 
 

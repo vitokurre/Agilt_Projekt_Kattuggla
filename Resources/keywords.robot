@@ -47,7 +47,6 @@ Create A Model
     Wait Until Page Contains  Please click on the column containing the text
     Sleep  1s
 
-
 Delete Model
     Wait Until Page Contains  My Models
     Wait Until Page Contains Element  ${MODELMENU}
@@ -69,4 +68,3 @@ Log Out User
 
 End Web Test
     Close Browser
-#hej detta är en test commit och push
