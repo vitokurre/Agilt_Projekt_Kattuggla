@@ -8,6 +8,10 @@ Suite Teardown  End Web Test
 
 *** Keywords ***
 
+Choose Model To Add Label
+    Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
+    #Click On Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
+    #Wait Until Page Contains  It does not look like you have trained the model
 
 
 
@@ -35,6 +39,10 @@ User is logged in; have changed workspace and created a model; ready to train a 
     Select Team Kattuggla As Workspace
     Create A Model
 
+User can create single labeleing
+    [Documentation]  Once created model; being able to chose single labeling when training
+    [Tags]  Training
+    Choose Model To Add Label
 
 This is Kat 50 task text
     [Documentation]  Once a model is created; being able to delete a model
