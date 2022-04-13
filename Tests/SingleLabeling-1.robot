@@ -42,20 +42,6 @@ Choose Model To Add Label
     Wait Until Page Contains Element  ${MODELBUTTON}
     Click Element  ${MODELBUTTON}
     Wait Until Page Contains Element  ${CHOOSEMODEL}
-    Delete Model
-    Log Out User
-
-
-
-
-    #Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
-    #Wait Until Page Contains Element  ${ADDLABEL}
-    #Click Element  ${ADDLABEL}
-    #Wait Until Page Contains  ${NEWLABELNAME}
-    #Input Text  ${NEWLABELNAME}  uggla
-    #Wait Until Page Contains Element  ${ADDONELABEL}
-
-
 
 *** Variables ***
 ${CHOOSEMODEL}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
@@ -73,17 +59,6 @@ ${XBUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
 ${MODELBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
 *** Test Cases ***
 
-
-
-#User Can Log In And Rent A Car
-#    [Documentation]  Once accessing the website; rent a car and confirm booking
-#    [Tags]  VG_test
-#    Given User Is Logged In
-#    When User Books Car
-#    And User Pays With Creditcard
-#    Then Car Has Been Booked
-
-
 User is logged in; have changed workspace and created a model; ready to train a model.
     [Documentation]  Once logged in; being able to change workspace
     [Tags]  StartUp
@@ -97,16 +72,12 @@ User can create single labeleing
     [Tags]  Training
     Choose Model To Add Label
 
-#This is Kat 50 task text
-#    [Documentation]  Once a model is created; being able to delete a model
-#    [Tags]  Model
-#    Delete Model
+User delete model and then logging out
+    [Documentation]  Once a model is created; being able to delete a model and then log out
+    [Tags]  Model
+    Delete Model
+    Log Out User
 
-
-#User logs out
-#    [Documentation]  Once user is finished with her work; being able to log out
-#    [Tags]  LogsOut
-#    Log Out User
 
 
 
