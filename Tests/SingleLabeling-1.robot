@@ -26,15 +26,24 @@ Choose Model To Add Label
     Element Text Should Be  ${NAMEONFIRSTLABEL}  KATT
     Wait Until Page Contains Element  ${ADDSEKUNDLABEL}
     Click Element  ${ADDSEKUNDLABEL}
-    Wait Until Page Contains Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
-    Input Text  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input  Uggla
-    Wait Until Page Contains Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
+    Wait Until Page Contains Element  ${INPUTTEXTLABEL}
+    Input Text  ${INPUTTEXTLABEL2}  Uggla
+    Wait Until Page Contains Element  ${ADDEDSECONDLABELDONE}
     #detta element är addlabel efter Uggla
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
+    Click Element  ${ADDEDSECONDLABELDONE}
     Wait Until Page Contains  Choose model type
+    Sleep  1s
     Wait Until Page Contains Element  ${CHOOSESINGLE}
     Click Element  ${CHOOSESINGLE}
     Wait Until Page Contains  Lets start by giving Labelf 20 samples
+    Wait Until Page Contains Element  ${XBUTTON}
+    Click Element  ${XBUTTON}
+    Sleep  1s
+    Wait Until Page Contains Element  ${MODELBUTTON}
+    Click Element  ${MODELBUTTON}
+    Wait Until Page Contains Element  ${CHOOSEMODEL}
+    Delete Model
+    Log Out User
 
 
 
@@ -57,11 +66,11 @@ ${ADDONELABEL}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/
 ${NAMEONFIRSTLABEL}  //*[@id="app"]/div[7]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
 ${ADDSEKUNDLABEL}  //*[@id="app"]/div[7]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
 ${CHOOSESINGLE}  //*[@id="app"]/div[8]/div/div/div[3]/button[1]/div
-#${}
-#${}
-
-
-
+${INPUTTEXTLABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${INPUTTEXTLABEL2}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input
+${ADDEDSECONDLABELDONE}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
+${XBUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
+${MODELBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
 *** Test Cases ***
 
 
