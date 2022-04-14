@@ -9,7 +9,6 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --start-maximized
     Create Webdriver    Chrome    chrome_options=${chrome_options}
     Set Window Size  1920  1080
-    Maximize Browser Window
 
 Go To Web Page
     Go to  ${URL}
