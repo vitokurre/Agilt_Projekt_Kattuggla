@@ -43,6 +43,9 @@ Choose Model To Add Label
     Click Element  ${MODELBUTTON}
     Wait Until Page Contains Element  ${CHOOSEMODEL}
 
+Ueser can see all labels
+
+
 *** Variables ***
 ${CHOOSEMODEL}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
 ${STARTTRAINING}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div[2]/div/a/div
