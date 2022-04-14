@@ -37,30 +37,27 @@ User can see all labels
     Click Element  ${CHOOSESINGLE}
     Wait Until Page Contains  Lets start by giving Labelf 20 samples
     Wait Until Page Contains Element  ${KATTLABEL}
+    Sleep  1s
     Click Element  ${KATTLABEL}
     Wait Until Page Contains  Lets start by giving Labelf 19 samples
     Wait Until Page Contains Element  ${UGGLALABEL}
+    Sleep  1s
     Click Element  ${UGGLALABEL}
     Wait Until Page Contains  Lets start by giving Labelf 18 samples
     Wait Until Page Contains Element  ${KATTLABEL}
+    Sleep  1s
     Click Element  ${KATTLABEL}
     Wait Until Page Contains  Lets start by giving Labelf 17 samples
-    Wait Until Page Contains Element ${UGGLALABEL}
+    Wait Until Page Contains Element  ${UGGLALABEL}
+    Sleep  1s
     Click Element  ${UGGLALABEL}
     Wait Until Page Contains  Lets start by giving Labelf 16 samples
     Wait Until Page Contains Element  ${KATTLABEL}
+    Sleep  1s
     Click Element  ${KATTLABEL}
     Wait Until Page Contains  Only 15 more to go!
-    Wait Until Page Contains  //*[@id="app"]/div[11]/div/div[1]/div[4]/div/div/button/div
-    Click Element  //*[@id="app"]/div[11]/div/div[1]/div[4]/div/div/button/div
-    Wait Until Page Contains  Only 12 more to go!
-    Wait Until Page Contains Element  //*[@id="app"]/div[11]/div/div[1]/div[4]/div/div/button/div
-    Click Element  //*[@id="app"]/div[11]/div/div[1]/div[4]/div/div/button/div
-    Wait Until Page Contains Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
-    Element Text Shuld Be  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div  KATT
-    Wait Until Page Contains Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
-    Element Text Shuld Be  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div  UGGLA
     Wait Until Page Contains Element  ${XBUTTON}
+    Sleep  1s
     Click Element  ${XBUTTON}
     Sleep  1s
     Wait Until Page Contains Element  ${MODELBUTTON}
