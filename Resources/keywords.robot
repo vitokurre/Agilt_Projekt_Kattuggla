@@ -6,9 +6,10 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --window-size=1920,1080
     Call Method    ${chrome_options}    add_argument    --start-maximized
     Create Webdriver    Chrome    chrome_options=${chrome_options}
-    Set Window Size  1920  1080
+    #Set Window Size  1920  1080
 
 Go To Web Page
     Go to  ${URL}
