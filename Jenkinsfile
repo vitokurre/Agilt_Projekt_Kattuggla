@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/vitokurre/Agilt_Projekt_Kattuggla.git'
-            }
-        }
         stage('Robot Framework') {
             steps {
                 sh 'robot --variable BROWSER:chrome -d Results Tests'
