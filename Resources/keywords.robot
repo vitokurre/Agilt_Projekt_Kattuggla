@@ -50,7 +50,7 @@ Create A Model
     Wait Until Page Contains  Synthetic generic support ticket example data that has half the dataset labeled
     Click Element  ${DATASETCONTINUE}
     Wait Until Page Contains  Please click on the column containing the text
-    Wait Until Page Contains Element  ${COLUMNCONTINUE}
+    Wait Until Element Is Visible  ${COLUMNCONTINUE}
     Sleep  1s
     Click Element  ${COLUMNCONTINUE}
     Wait Until Page Contains  Name your model
