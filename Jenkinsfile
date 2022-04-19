@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Robot Framework') {
             steps {
-                sh 'robot --variable BROWSER:headlesschrome -d Results Tests'
+                sh 'robot --variable BROWSER:chrome -d Results Tests'
             }
             post {
                 always {

@@ -1,3 +1,6 @@
+*** Variables ***
+${WINDOW}  window-size=1920,1080
+
 *** Keywords ***
 Begin Web Test
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
@@ -6,12 +9,10 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
-    #Call Method    ${chrome_options}    add_argument    --start-maximized
+    Call Method    ${chrome_options}    add_argument    --start-maximized
     Call Method    ${chrome_options}    add_argument    ${WINDOW}
-    #Call Method    ${chrome_options}    add_argument    window-size=1920,1080
     Create Webdriver    Chrome    chrome_options=${chrome_options}
-    #Set Window Size  ${1920}  ${1080}
-    #Set Window Size  1920  1080
+    Set Selenium Timeout  10s
 
 Go To Web Page
     Go to  ${URL}
@@ -20,6 +21,7 @@ Go To Web Page
 Log in User
     Input Text  ${MAIL}   jakob.nilsson@iths.se
     Input Text  ${PASSWORD}  44321jJa
+    Wait Until Element Is Visible  ${COOKIEDOWN}
     Click Element  ${COOKIEDOWN}
     Click Element   ${LOGINBUTTON}
     Wait Until Page Contains  Welcome to Labelf!
