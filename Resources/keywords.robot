@@ -12,7 +12,7 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --start-maximized
     Call Method    ${chrome_options}    add_argument    ${WINDOW}
     Create Webdriver    Chrome    chrome_options=${chrome_options}
-    Set Selenium Timeout  5s
+    Set Selenium Timeout  10s
 
 Go To Web Page
     Go to  ${URL}
