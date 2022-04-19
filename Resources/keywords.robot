@@ -21,6 +21,7 @@ Go To Web Page
 Log in User
     Input Text  ${MAIL}   jakob.nilsson@iths.se
     Input Text  ${PASSWORD}  44321jJa
+    Wait Until Element Is Visible  ${COOKIEDOWN}
     Click Element  ${COOKIEDOWN}
     Click Element   ${LOGINBUTTON}
     Wait Until Page Contains  Welcome to Labelf!
