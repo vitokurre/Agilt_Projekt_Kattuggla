@@ -26,13 +26,16 @@ Log in User
     Wait Until Page Contains  Welcome to Labelf!
 
 Select Team Kattuggla As Workspace
+    Sleep  1s
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
     Wait Until Page Contains Element  ${MAINMENULIST}
     Click Element  ${MAINMENUTEAMKATTUGGLA}
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
+    Sleep  1s
     Wait Until Page Contains Element  ${ATTRIBUTSTRINGTEAMKATTUGGLA}
+    Sleep  1s
     Element Text Should Be  ${ATTRIBUTSTRINGTEAMKATTUGGLA}  TEAM KATTUGGLA
 
 Create A Model
