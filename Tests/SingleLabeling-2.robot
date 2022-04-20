@@ -8,9 +8,9 @@ Suite Teardown  End Web Test
 
 *** Keywords ***
 
-User can train a single choice model to the next data point
+All labels are selectable
    Sleep  1s
-   Wait Until Page Contains  Models
+   Wait Until Page Contains  My Models
    Click Element  ${BODYMODEL}
    Sleep  1s
    Wait Until Page Contains  It does not look like you have trained the model
@@ -30,19 +30,35 @@ User can train a single choice model to the next data point
    Wait Until page Contains  Add a new label
    Sleep  1s
    Input Text  ${SECOUNDNAMELABEL}  Test 2
-   Sleep  3s
+   Sleep  1s
    Click Element  ${ADDASECOUNDNAMEDLABEL}
    Sleep  1s
    Click Element  ${SINGLECHOISE}
+   Sleep  1s
+   Wait Until Page Contains Element  ${ADDALABEL}
+   Sleep  1s
+   Click Element  ${ADDALABEL}
+   Wait Until Page Contains Element  ${NAMEONTHIRDLABEL}
+   Input Text  ${NAMEONTHIRDLABEL}  Test 3
+   Wait Until Page Contains Element  ${ADDLABELBUTTON}
+   Click Element  ${ADDLABELBUTTON}
+   Sleep  1s
+   Wait Until Page Contains Element  ${LABEL1}
+   Wait Until Page Contains Element  ${LABEL2}
+   Wait Until Page Contains Element  ${LABEL3}
+
+User can train a single choice model to the next data point
    Wait Until page Contains  Lets start by giving Labelf 20 samples
    Sleep  1s
-
    Wait Until Page Contains Element  ${DATAPOINT}
    ${text} =  Get Text  ${DATAPOINT}
    Click Element  ${TEST1LABEL}
+   Sleep  2s
    Element Text Should Not Be  ${DATAPOINT}  ${text}
-
-   Sleep  1s
+   Wait Until Page Contains Element  ${ESCBUTTON}
+   Click Element  ${ESCBUTTON}
+   Wait Until Page Contains Element  ${MOELDSBUTTON}
+   Click Element  ${MOELDSBUTTON}
 
 *** Variables ***
 
@@ -56,8 +72,15 @@ ${SECOUNDNAMELABEL}       //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/d
 ${ADDASECOUNDNAMEDLABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button/div
 ${SINGLECHOISE}           //*[@id="app"]/div[8]/div/div/div[3]/button[1]/div
 ${TEST1LABEL}             //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
-#${DATAPOINT}              /html/body/div[1]/div/div[5]/div/div[1]/div[4]/div/div/span/div/div/div[1]/div[1]/div/span
-${DATAPOINT}              //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div
+${DATAPOINT}              //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[1]/div[1]/div/span
+${ESCBUTTON}              //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
+${MOELDSBUTTON}           //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div/i
+${ADDALABEL}              //*[@id="app"]/div[8]/div/div[1]/div[3]/div/a/div/span
+${NAMEONTHIRDLABEL}       //*[@id="app"]/div[2]/div/div/form/div[2]/div/div/div[1]/div/div/div[1]/div/input
+${ADDLABELBUTTON}         //*[@id="app"]/div[2]/div/div/form/div[3]/button/div
+${LABEL1}                 //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
+${LABEL2}                 //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
+${LABEL3}                 //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[3]/div
 
 *** Test Cases ***
 
@@ -80,6 +103,11 @@ User Can Create Model
     [Documentation]  Once workspace is changed; being able to create model
     [Tags]  Model
     Create A Model
+
+User can choose all labels for training
+    [Documentation]  When training; when a new label is added, all labels shall still be possible to select
+    [Tags]  Training
+    All labels are selectable
 
 User can train a model
     [Documentation]  Once one label is selected; being able to train it
