@@ -28,6 +28,11 @@ User Can Create Model
     [Tags]  Model
     Create A Model
 
+User can train a model
+    [Documentation]  Once one label is selected; being able to train it
+    [Tags]  Label
+    User can train a single choice model to the next data point
+
 User Can Delete Model
     [Documentation]  Once a model is created; being able to delete a model
     [Tags]  Model
