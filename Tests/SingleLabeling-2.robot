@@ -9,34 +9,27 @@ Suite Teardown  End Web Test
 *** Keywords ***
 
 All labels are selectable
-   Sleep  1s
    Wait Until Page Contains  My Models
-   Click Element  ${BODYMODEL}
    Sleep  1s
+   Click Element  ${BODYMODEL}
    Wait Until Page Contains  It does not look like you have trained the model
    Click Element  ${STARTTRAINING}
-   Sleep  1s
    Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
+   Sleep  1s
    Click Element  ${ADDLABEL}
-   Sleep  1s
    Wait Until page Contains  Add a new label
-   Sleep  1s
    Input Text  ${FIRSTNAMELABEL}  Test 1
    Click Element  ${ADDAFIRSTNAMEDLABEL}
    Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
    Sleep  2s
    Click Element  ${ADDASECOUNDLABEL}
-   Sleep  1s
    Wait Until page Contains  Add a new label
    Sleep  1s
    Input Text  ${SECOUNDNAMELABEL}  Test 2
-   Sleep  1s
    Click Element  ${ADDASECOUNDNAMEDLABEL}
    Sleep  1s
    Click Element  ${SINGLECHOISE}
-   Sleep  1s
    Wait Until Page Contains Element  ${ADDALABEL}
-   Sleep  1s
    Click Element  ${ADDALABEL}
    Wait Until Page Contains Element  ${NAMEONTHIRDLABEL}
    Input Text  ${NAMEONTHIRDLABEL}  Test 3
@@ -49,7 +42,6 @@ All labels are selectable
 
 User can train a single choice model to the next data point
    Wait Until page Contains  Lets start by giving Labelf 20 samples
-   Sleep  1s
    Wait Until Page Contains Element  ${DATAPOINT}
    ${text} =  Get Text  ${DATAPOINT}
    Click Element  ${TEST1LABEL}
@@ -57,8 +49,8 @@ User can train a single choice model to the next data point
    Element Text Should Not Be  ${DATAPOINT}  ${text}
    Wait Until Page Contains Element  ${ESCBUTTON}
    Click Element  ${ESCBUTTON}
-   Wait Until Page Contains Element  ${MOELDSBUTTON}
-   Click Element  ${MOELDSBUTTON}
+   Wait Until Page Contains Element  ${MODELBUTTON}
+   Click Element  ${MODELBUTTON}
 
 *** Variables ***
 
@@ -74,7 +66,7 @@ ${SINGLECHOISE}           //*[@id="app"]/div[8]/div/div/div[3]/button[1]/div
 ${TEST1LABEL}             //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
 ${DATAPOINT}              //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[1]/div[1]/div/span
 ${ESCBUTTON}              //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
-${MOELDSBUTTON}           //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div/i
+${MODELBUTTON}            //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div/i
 ${ADDALABEL}              //*[@id="app"]/div[8]/div/div[1]/div[3]/div/a/div/span
 ${NAMEONTHIRDLABEL}       //*[@id="app"]/div[2]/div/div/form/div[2]/div/div/div[1]/div/div/div[1]/div/input
 ${ADDLABELBUTTON}         //*[@id="app"]/div[2]/div/div/form/div[3]/button/div
