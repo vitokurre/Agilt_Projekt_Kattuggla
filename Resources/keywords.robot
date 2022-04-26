@@ -58,6 +58,7 @@ Create A Model
     Click Element  ${COLUMNCONTINUE}
     Wait Until Page Contains  Name your model
     Sleep  1s
+    Input Text  ${DESCRIPTION}  This is a Discription of created model
     Click Element  ${CONTINUESCRATCH}
     Wait Until Page Contains  Please click on the column containing the text
     Sleep  1s
