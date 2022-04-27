@@ -8,7 +8,7 @@ Suite Teardown  End Web Test
 
 *** Keywords ***
 User Can Swich Workspace
-
+    User Can Swich Workspace
 
 *** Variables ***
 
