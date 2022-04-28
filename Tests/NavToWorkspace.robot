@@ -8,10 +8,22 @@ Suite Teardown  End Web Test
 
 *** Keywords ***
 User Can Swich Workspace
-    User Can Swich Workspace
+    Wait Until Page Contains Element  ${MAINMENU}
+    Click Element  ${MAINMENU}
+    Wait Until Page Contains  Current Workspace:
+    Scroll Element Into View  ${TKU}
+    Wait Until Page Contains Element  ${TKU}
+    Wait Until Page Contains Element  ${MFW1}
+    Wait Until Page Contains Element  ${MFW2}
+    Click Element  ${TKU}
+    Wait Until Location Is  https://stag.labelf.ai/main/68/models/view
+
+
 
 *** Variables ***
-
+${TKU}  //*[@id="app"]/div[3]/div/div[2]/div[5]/a/div[1]
+${MFW1}  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]
+${MFW2}  //*[@id="app"]/div[3]/div/div[2]/div[4]/a/div[1]
 *** Test Cases ***
 
 User Can Access Website And See Front Page
@@ -29,13 +41,12 @@ User Can Swich Workspace
     [Tags]  Account
     User Can Swich Workspace
 
-User Can Create Model
-    [Documentation]  Once workspace is changed; being able to create model
-    [Tags]  Model
-    Create A Model
+#User Can Create Model
+    #[Documentation]  Once workspace is changed; being able to create model
+    #[Tags]  Model
+    #Create A Model
 
-User delete model and then logging out
-    [Documentation]  Once a model is created; being able to delete a model and then log out
-    [Tags]  Model
-    Delete Model
-    Log Out User
+#User Can Log out
+    #[Documentation]  Once user is logged in; being able to log out
+   # [Tags]  Account
+    #Log Out User
