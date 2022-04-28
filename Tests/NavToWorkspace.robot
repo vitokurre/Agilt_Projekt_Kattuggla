@@ -17,6 +17,14 @@ User Can Swich Workspace
     Wait Until Page Contains Element  ${MFW2}
     Click Element  ${TKU}
     Wait Until Location Is  https://stag.labelf.ai/main/68/models/view
+    Sleep  1s
+    Wait Until Page Contains Element  ${MFW1}
+    Click Element  ${MFW1}
+    Wait Until Location Is  https://stag.labelf.ai/main/66/models/view
+    Sleep  1s
+    Wait Until Page Contains Element  ${MAINMENU}
+    Click Element  ${MAINMENU}
+
 
 
 
@@ -46,7 +54,7 @@ User Can Swich Workspace
     #[Tags]  Model
     #Create A Model
 
-#User Can Log out
-    #[Documentation]  Once user is logged in; being able to log out
-   # [Tags]  Account
-    #Log Out User
+User Can Log out
+    [Documentation]  Once user is logged in; being able to log out
+    [Tags]  Account
+    Log Out User
