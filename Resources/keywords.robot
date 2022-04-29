@@ -6,7 +6,7 @@ Begin Web Test
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless
+    #Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --start-maximized
@@ -19,26 +19,20 @@ Go To Web Page
     Wait Until Page Contains Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]
 
 Log in User
-    Input Text  ${MAIL}   jakob.nilsson@iths.se
-    Input Text  ${PASSWORD}  44321jJa
+    Input Text  ${MAIL}   felicia.Au.thersthol@iths.se
+    Input Text  ${PASSWORD}  iths123
     Wait Until Element Is Visible  ${COOKIEDOWN}
     Click Element  ${COOKIEDOWN}
     Click Element   ${LOGINBUTTON}
-    Wait Until Page Contains  Welcome to Labelf!
+    #Wait Until Page Contains  Welcome to Labelf!
 
 Select Team Kattuggla As Workspace
-    Sleep  1s
-    Wait Until Page Contains Element  ${MAINMENU}
-    Click Element  ${MAINMENU}
-    Wait Until Page Contains Element  ${MAINMENULIST}
-    Click Element  ${MAINMENUTEAMKATTUGGLA}
-    Wait Until Page Contains Element  ${MAINMENU}
-    Click Element  ${MAINMENU}
-    Sleep  1s
-    Wait Until Page Contains Element  ${ATTRIBUTSTRINGTEAMKATTUGGLA}
-    Sleep  1s
-    Element Text Should Be  ${ATTRIBUTSTRINGTEAMKATTUGGLA}  TEAM KATTUGGLA
-    Wait Until Location Is  https://stag.labelf.ai/main/66/models/view
+    Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[3]/div/button
+    Click Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[3]/div/button
+    Scroll Element Into View  //*[@id="app"]/div[4]/div/div[2]/div[4]/a/div[1]/div
+    Wait Until Page Contains Element  //*[@id="app"]/div[4]/div/div[2]/div[4]/a/div[1]/div
+    Click Element  //*[@id="app"]/div[4]/div/div[2]/div[4]/a/div[1]/div
+    Wait Until Location Is  https://stag.labelf.ai/main/67/models/view
     #Check the id in the link if its the right workspace
     Wait Until Page Contains  My first workspace
 
