@@ -16,12 +16,17 @@ Choose Model And Verify Correct Labeling
     Click Element  ${CLICKDOWNTRAININGELF}
     Wait Until Page Contains  This is an overview of the projected distribution of labels (user labeled+predicted by the model) across your datasets.
     Wait Until Page Contains  Test your model
-    Sleep  300 s
+    Sleep  900 s
     Wait Until Page Contains Element  ${TESTTEXTFIELD}
     Input Text  ${TESTTEXTFIELD}  could i create a user account?
     Wait Until Page Contains Element  ${TESTBUTTON}
     Click Element  ${TESTBUTTON}
     Wait Until Page Contains Element  ${TESTLABELING}
+    Element Text Should Be  ${TESTLABELING}  ACCOUNT
+    Wait Until Page Contains Element  ${MODELSBUTTON}
+    Click Element  ${MODELSBUTTON}
+
+
     #grönt fram till hit.
     #nu måste jag plocka ut "account" ur ${TESTLABELING} och jämföra med ${CORRECTLABELING}
     #när detta är klart och stämmer så klickar vi på models därefter raderas modellen som vanligt.
@@ -65,6 +70,7 @@ Create A Trained Model
 
 
 
+
 Ueser can see all labels
 
 
@@ -80,6 +86,9 @@ ${TESTBUTTON}  //*[@id="app"]/div[9]/div[1]/main/div/div/div[2]/div/div[1]/div/d
 ${CORRECTLABELING}  ACCOUNT
 ${TESTLABELING}  //*[@id="app"]/div[9]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[3]/div[1]/nav/div[1]/div[1]
 ${CLICKDOWNTRAININGELF}  //*[@id="app"]/div[3]/div/div/button/div/i
+${STRINGTOCEHCK}
+${MODELSBUTTON}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]
+
 *** Test Cases ***
 
 User is logged in; have changed workspace and created a model; ready to train a model.
