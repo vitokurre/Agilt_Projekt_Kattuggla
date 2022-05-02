@@ -29,12 +29,13 @@ Log in User
 Select Team Kattuggla As Workspace
     Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[3]/div/button
     Click Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[3]/div/button
-    Scroll Element Into View  //*[@id="app"]/div[4]/div/div[2]/div[4]/a/div[1]/div
-    Wait Until Page Contains Element  //*[@id="app"]/div[4]/div/div[2]/div[4]/a/div[1]/div
-    Click Element  //*[@id="app"]/div[4]/div/div[2]/div[4]/a/div[1]/div
+    Scroll Element Into View  //*[@id="app"]/div[4]/div/div[2]/div[6]/a/div[1]
+    Wait Until Page Contains Element  //*[@id="app"]/div[4]/div/div[2]/div[4]/a/div[1]
+    Click Element  //*[@id="app"]/div[4]/div/div[2]/div[4]/a/div[1]
     Wait Until Location Is  https://stag.labelf.ai/main/67/models/view
     #Check the id in the link if its the right workspace
     Wait Until Page Contains  My first workspace
+    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
 
 Create A Model
     Sleep  1s
