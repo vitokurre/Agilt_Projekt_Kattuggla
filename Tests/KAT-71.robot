@@ -9,7 +9,6 @@ Suite Teardown  End Web Test
 *** Keywords ***
 
 Choose Model And Verify Correct Labeling
-    #Sleep  180 s
     Wait Until Page Contains Element  ${CHOOSEMODEL}
     Click Element  ${CHOOSEMODEL}
     Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
@@ -67,10 +66,6 @@ Create A Trained Model
     Wait Until Page Contains Element  ${CONTINUESCRATCH}
     Click Element  ${CONTINUESCRATCH}
 
-
-
-
-
 Ueser can see all labels
 
 
@@ -87,7 +82,7 @@ ${CORRECTLABELING}  ACCOUNT
 ${TESTLABELING}  //*[@id="app"]/div[9]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[3]/div[1]/nav/div[1]/div[1]
 ${CLICKDOWNTRAININGELF}  //*[@id="app"]/div[3]/div/div/button/div/i
 ${STRINGTOCEHCK}
-${MODELSBUTTON}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]
+${MODELSBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
 
 *** Test Cases ***
 
