@@ -28,11 +28,11 @@ Log in User
 
 Select Team Kattuggla As Workspace
     Sleep  1s
-    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
-    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
+    Wait Until Page Contains Element  ${MAINMENU}
+    Click Element  ${MAINMENU}
     Wait Until Page Contains  Current Workspace:
-    Scroll Element Into View  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]
-    Click Element  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]
+    Scroll Element Into View  ${MYWORKSPACE}
+    Click Element  ${MYWORKSPACE}
     #Wait Until Page Contains Element  ${MAINMENU}
     #Click Element  ${MAINMENU}
     #Wait Until Page Contains Element  ${MAINMENULIST}
