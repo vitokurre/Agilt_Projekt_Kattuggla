@@ -18,19 +18,26 @@ Enter an unpreset data point
     Wait Until Page Contains  Synthetic generic support ticket example data that has half the dataset labeled
     Click Element  ${DATASETCONTINUE}
     Wait Until Page Contains  Please click on the column containing the text you want to classify
-    Wait Until Page Contains Element  ${BETABUTTON}
+    Sleep  3s
+    Page Should Contain Element  ${BETABUTTON}
+    Sleep  1s
     Click Element  ${BETABUTTON}
     Wait Until Element Is Visible  ${COLUMNCONTINUE}
     Sleep  1s
     Click Element  ${COLUMNCONTINUE}
-    Wait Until Page Contains  Please click on the column containing the labels
+    Sleep  3s
+    Page Should Contain Element  ${NEXTCONTINUE}
     Sleep  1s
-    Wait Until Page Contains Element ${CONTINUEBUTTON}
-    Click Element  ${CONTINUEBUTTON}
+    Scroll Element Into View  ${NEXTCONTINUE}
+    Sleep  1s
+    Click Element  ${NEXTCONTINUE}
+    #Wait Until Page Contains  Please click on the column containing the labels
+    #Sleep  1s
+    #Wait Until Page Contains Element ${CONTINUEBUTTON}
+    #Click Element  ${CONTINUEBUTTON}
+    Sleep  1s
     Wait Until Page Contains  Customer support data model
     #Input Text  ${DESCRIPTION}  This is a Discription of created model
-    Wait Until Page Contains Element  ${CONTINUESCRATCH}
-    Click Element  ${CONTINUESCRATCH}
     Wait Until Page Contains  ${MODELSNUMBER}
     Wait Until Page Contains  ${CREATEDMODEL}
     Click Element  ${CREATEDMODEL}
@@ -52,13 +59,16 @@ Enter an unpreset data point
     Sleep  1s
 
 *** Variables ***
-${BETABUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/div/input
+${BETABUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/label/div
 ${CONTINUEBUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
 ${MODELSNUMBER}  //*[@id="app"]/div[7]/div[1]/main/div/div/nav/div/div[1]
 ${CREATEDMODEL}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[1]
 ${EXEMPLECOLUMN}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[1]/div/div[1]/div
 ${SUMMITBUTTON}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]/div
 ${CATEGORYTABLE}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[3]
+${NEXTCONTINUE}   //*[@id="app"]/div[4]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
+                  //*[@id="app"]/div[4]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
+
 *** Test Cases ***
 
 User is logged in; have changed workspace.
@@ -69,11 +79,12 @@ User is logged in; have changed workspace.
     Select Team Kattuggla As Workspace
 
 User Can Enter An Unpreset Data Point
-    [Documentation]  Once logged in and change workspce; Being able to unpreset data point
+    [Documentation]  Once logged in and change workspce; unpreset data point can be categorized
     [Tags]  Data Point
     Enter an unpreset data point
 
 User Can Log out
     [Documentation]  Once user is logged in; being able to log out
     [Tags]  Account
+    Delete Model
     Log Out User
