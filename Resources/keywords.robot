@@ -33,16 +33,6 @@ Select Team Kattuggla As Workspace
     Wait Until Page Contains  Current Workspace:
     Scroll Element Into View  ${MYWORKSPACE}
     Click Element  ${MYWORKSPACE}
-    #Wait Until Page Contains Element  ${MAINMENU}
-    #Click Element  ${MAINMENU}
-    #Wait Until Page Contains Element  ${MAINMENULIST}
-    #Click Element  ${MAINMENUTEAMKATTUGGLA}
-    #Wait Until Page Contains Element  ${MAINMENU}
-    #Click Element  ${MAINMENU}
-    #Sleep  1s
-    #Wait Until Page Contains Element  ${ATTRIBUTSTRINGTEAMKATTUGGLA}
-    #Sleep  1s
-    #Element Text Should Be  ${ATTRIBUTSTRINGTEAMKATTUGGLA}  TEAM KATTUGGLA
     Wait Until Location Is  https://stag.labelf.ai/main/66/models/view
     #Ceck the id in the link if its the right workspace
     Wait Until Page Contains  My first workspace
