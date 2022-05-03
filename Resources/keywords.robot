@@ -6,7 +6,7 @@ Begin Web Test
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    #Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --start-maximized
@@ -61,7 +61,7 @@ Create A Model
     Sleep  1s
 
 Delete Model
-    #Wait Until Page Contains  My Models
+    Wait Until Page Contains  My Models
     Wait Until Page Contains Element  ${MODELMENU}
     Click Element  ${MODELMENU}
     Wait Until Page Contains Element  ${DELETE}
