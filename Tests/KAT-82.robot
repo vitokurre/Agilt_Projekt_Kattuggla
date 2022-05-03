@@ -20,8 +20,12 @@ Ueser Can Change Model Name
     Wait Until Page Contains Element  //*[@id="app"]/div[4]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[3]/div
     Click Element  //*[@id="app"]/div[4]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[3]/div
     Wait Until Page Contains  Customer support data modelhej
+    Wait Until Page Contains Element  ${MODELSBUTTON}
+    Click Element  ${MODELSBUTTON}
 
 *** Variables ***
+
+${MODELSBUTTON}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
 
 *** Test Cases ***
 User Can Access Website And See Front Page
