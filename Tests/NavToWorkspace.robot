@@ -49,10 +49,10 @@ User Can Swich Workspace
     [Tags]  Account
     User Can Swich Workspace
 
-#User Can Create Model
-    #[Documentation]  Once workspace is changed; being able to create model
-    #[Tags]  Model
-    #Create A Model
+User Can Create Model
+    [Documentation]  Once workspace is changed; being able to create model
+    [Tags]  Model
+    Create A Model
 
 User Can Log out
     [Documentation]  Once user is logged in; being able to log out
