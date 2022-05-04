@@ -68,6 +68,7 @@ User can see all labels
 
 
 *** Variables ***
+
 ${CHOOSEMODEL}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
 ${STARTTRAINING}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div[2]/div/a/div
 ${ADDLABEL}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div
@@ -83,6 +84,7 @@ ${XBUTTON}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
 ${MODELBUTTON}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
 ${KATTLABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[1]/div
 ${UGGLALABEL}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button[2]/div
+
 *** Test Cases ***
 
 User is logged in; have changed workspace and created a model; ready to train a model.
