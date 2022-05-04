@@ -7,7 +7,7 @@ Suite Setup    Begin Web Test
 Suite Teardown  End Web Test
 
 *** Keywords ***
-Enter an unpreset data point
+Train a new model
     Sleep  1s
     Wait Until Page Contains Element  ${NEWMODELBUTTON}
     Click Element  ${NEWMODELBUTTON}
@@ -26,48 +26,75 @@ Enter an unpreset data point
     Sleep  1s
     Click Element  ${COLUMNCONTINUE}
     Sleep  3s
-    Page Should Contain Element  ${NEXTCONTINUE}
-    Sleep  1s
     Scroll Element Into View  ${NEXTCONTINUE}
+    Wait Until Page Contains Element  ${NEXTCONTINUE}
     Sleep  1s
     Click Element  ${NEXTCONTINUE}
-    #Wait Until Page Contains  Please click on the column containing the labels
-    #Sleep  1s
-    #Wait Until Page Contains Element ${CONTINUEBUTTON}
-    #Click Element  ${CONTINUEBUTTON}
     Sleep  1s
-    Wait Until Page Contains  Customer support data model
-    #Input Text  ${DESCRIPTION}  This is a Discription of created model
-    Wait Until Page Contains  ${MODELSNUMBER}
-    Wait Until Page Contains  ${CREATEDMODEL}
-    Click Element  ${CREATEDMODEL}
-    Wait Until Page Contains  Test your model
-    Input Text  ${EXEMPLECOLUMN} When will my order arrive?
+    Wait Until Page Contains Element  ${CREATEMODEL_BUTTON}
+    Click Element  ${CREATEMODEL_BUTTON}
+    Sleep  3s
+    Page Should Contain Element  ${MODELSNUMBER}
+    Sleep  3s
+    Wait Until Page Contains Element  ${TESTMODEL}
+    Sleep  3s
+    Click Element  ${TESTMODEL}
+    Sleep  5s
+    Wait Until Page Contains Element  ${TRAINING_XBUTTON}
+    Sleep  1s
+    Click Element  ${TRAINING_XBUTTON}
+    Sleep  5s
+    Wait Until Page Contains  Model is processing
+    Sleep  13m
+    Wait Until Page Contains Element  ${MODEL_BUTTON}
+    Sleep  1s
+    Click Element  ${MODEL_BUTTON}
+
+Enter an unpreset data point
+    Wait Until Page Contains Element  ${TESTMODEL_2}
+    Sleep  3s
+    Click Element  ${TESTMODEL_2}
+    Sleep  3s
+    Wait Until Page Contains  Model is online
+    Sleep  1s
+    Wait Until Page Contains Element  ${EXEMPELTEXTFIELD}
+    Sleep  3s
+    Input Text  ${EXEMPELTEXTFIELD}  When do I pay my invoice?
+    Sleep  3s
+    Scroll Element Into View  ${SUMMITBUTTON}
+    Sleep  1s
     Wait Until Page Contains Element  ${SUMMITBUTTON}
-    Click Element  ${SUMMITBUTTON}
-    Wait Until Page Contains  ${CATEGORYTABLE}
     Sleep  1s
-    Input Text  ${EXEMPLECOLUMN} When do I get my invoice?
-    Wait Until Page Contains Element  ${SUMMITBUTTON}
     Click Element  ${SUMMITBUTTON}
-    Wait Until Page Contains  ${CATEGORYTABLE}
     Sleep  1s
-    Input Text  ${EXEMPLECOLUMN} What is the latest trend?
-    Wait Until Page Contains Element  ${SUMMITBUTTON}
-    Click Element  ${SUMMITBUTTON}
-    Wait Until Page Contains  ${CATEGORYTABLE}
+    Wait Until Page Contains Element  ${CATEGORYTABLE}
     Sleep  1s
+    Element Text Should Be  ${CATEGORYTABLE}  INVOICES
+    Sleep  1s
+    Wait Until Page Contains Element  ${MODELBUTTON_2}
+    Sleep  1s
+    Click Element  ${MODELBUTTON_2}
+    Sleep  1s
+    Wait Until Page Contains  My Models (1)
+
 
 *** Variables ***
-${BETABUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/label/div
-${CONTINUEBUTTON}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
-${MODELSNUMBER}  //*[@id="app"]/div[7]/div[1]/main/div/div/nav/div/div[1]
-${CREATEDMODEL}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[1]
-${EXEMPLECOLUMN}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[1]/div/div[1]/div
-${SUMMITBUTTON}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]/div
-${CATEGORYTABLE}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[3]
-${NEXTCONTINUE}   //*[@id="app"]/div[4]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
-                  //*[@id="app"]/div[4]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
+${BETABUTTON}           //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/label/div
+${CONTINUEBUTTON}       //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
+${MODELNAME_TEXTFIELD}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[1]/div/div/div[1]/div/div/div[1]/div
+${CREATEMODEL_BUTTON}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button
+${MODELSNUMBER}         //*[@id="app"]/div[7]/div[1]/main/div/div/nav/div/div[1]
+${TESTMODEL}            //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
+${TESTMODEL_2}          //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div
+${TRAINING_XBUTTON}     //*[@id="app"]/div[3]/div/div/button/div/i
+${MODEL_BUTTON}         //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div/span[1]
+${EXEMPELTEXTFIELD}     //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[1]/div/div[1]/div/textarea
+${EXEMPLECOLUMN}        //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[1]/div/div[1]/div
+${SUMMITBUTTON}         //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]/div
+${CATEGORYTABLE}        //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[3]/div[1]/nav/div[1]/div[1]
+${NEXTCONTINUE}         //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
+${MODELBUTTON_2}        //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
+
 
 *** Test Cases ***
 
@@ -76,12 +103,14 @@ User is logged in; have changed workspace.
     [Tags]  StartUp
     Go To Web Page
     Log in User
-    Select Team Kattuggla As Workspace
+    #Select Team Kattuggla As Workspace
 
 User Can Enter An Unpreset Data Point
     [Documentation]  Once logged in and change workspce; unpreset data point can be categorized
     [Tags]  Data Point
+    Train a new model
     Enter an unpreset data point
+
 
 User Can Log out
     [Documentation]  Once user is logged in; being able to log out
