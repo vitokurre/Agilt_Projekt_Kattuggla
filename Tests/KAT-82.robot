@@ -7,6 +7,27 @@ Suite Setup    Begin Web Test
 Suite Teardown  End Web Test
 
 *** Keywords ***
+
+Log in User2
+    Input Text  ${MAIL}   jakob.nilsson@iths.se
+    Input Text  ${PASSWORD}  44321jJa
+    Wait Until Element Is Visible  ${COOKIEDOWN}
+    Click Element  ${COOKIEDOWN}
+    Click Element   ${LOGINBUTTON}
+    Wait Until Page Contains  Welcome to Labelf!
+
+Select Myworkspace As Workspace
+    Sleep  1s
+    Wait Until Page Contains Element  ${MAINMENU}
+    Click Element  ${MAINMENU}
+    Wait Until Page Contains  Current Workspace:
+    Scroll Element Into View  ${MYWORKSPACE}
+    Click Element  ${MYWORKSPACE}
+    Wait Until Location Is  https://stag.labelf.ai/main/66/models/view
+    #Ceck the id in the link if its the right workspace
+    Wait Until Page Contains  My first workspace
+    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
+
 Ueser Can Change Model Name
     Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a
     Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a
@@ -36,12 +57,12 @@ User Can Access Website And See Front Page
 User Can Log In
     [Documentation]  Once accessing the website; user can log in
     [Tags]  Account
-    Log in User
+    Log in User2
 
 User Can Change Workspace
     [Documentation]  Once user is logged in; being able to change workspace
     [Tags]  Workspace
-    Select Team Kattuggla As Workspace
+    Select Myworkspace As Workspace
 
 User Can Create Model
     [Documentation]  Once workspace is changed; being able to create model
