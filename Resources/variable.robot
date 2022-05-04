@@ -23,3 +23,4 @@ ${ACCOUNTLIST}  //*[@id="app"]/div[5]/div
 ${LOGOUT}  //*[@id="app"]/div[5]/div/div[3]/div/a/div[1]/div
 ${WINDOW}  window-size=1920,1080
 ${MYWORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]
+${TEAMKATTUGGLAWORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[5]/a/div[1]
