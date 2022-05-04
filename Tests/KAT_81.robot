@@ -16,12 +16,12 @@ User Can Access Website And See Front Page
 User Can Log In
     [Documentation]  Once accessing the website; user can log in
     [Tags]  Account
-    Log in User
+    Log in User4
 
 User Can Change Workspace
     [Documentation]  Once user is logged in; being able to change workspace
     [Tags]  Workspace
-    Select Team Kattuggla As Workspace
+    Select MyWorkspace As Workspace
 
 User Can Create Model
     [Documentation]  Once workspace is changed; being able to create model
@@ -44,6 +44,29 @@ User Can Log out
     Log Out User
 
 *** Keywords ***
+Log in User4
+    Input Text  ${MAIL}   zheng.lin@iths.se
+    Input Text  ${PASSWORD}  lz1234567
+    Wait Until Element Is Visible  ${COOKIEDOWN}
+    Click Element  ${COOKIEDOWN}
+    Click Element   ${LOGINBUTTON}
+    Wait Until Page Contains  Welcome to Labelf!
+
+Select MyWorkspace As Workspace
+    Sleep  1s
+    Wait Until Page Contains Element  ${MAINMENU}
+    Click Element  ${MAINMENU}
+    Wait Until Page Contains  Current Workspace:
+    Scroll Element Into View    //*[@id="app"]/div[3]/div/div[2]/div[6]/a/div[1]/div
+    #//*[@id="app"]/div[4]/div/div[2]/div[3]/a/div[1]
+    Click Element  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]/div
+    #//*[@id="app"]/div[4]/div/div[2]/div[3]/a/div[1]
+    Wait Until Location Is  https://stag.labelf.ai/main/61/models/view
+    #Ceck the id in the link if its the right workspace
+    Wait Until Page Contains  My first workspace
+    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
+                   #//*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/i
+
 Change A Created Model Name And Show The Setting Page
     Wait Until Page Contains  My Models
     Wait Until Page Contains Element    ${OVERVIEW}
