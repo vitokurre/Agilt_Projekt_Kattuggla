@@ -8,27 +8,6 @@ Suite Teardown  End Web Test
 
 *** Keywords ***
 
-Choose Model And Verify Correct Labeling
-    Wait Until Page Contains Element  ${CHOOSEMODEL}
-    Click Element  ${CHOOSEMODEL}
-    Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
-    Click Element  ${CLICKDOWNTRAININGELF}
-    Wait Until Page Contains  This is an overview of the projected distribution of labels (user labeled+predicted by the model) across your datasets.
-   # Sleep  900 s
-    Wait Until Page Contains Element  ${MODELSBUTTON1}
-    Click Element  ${MODELSBUTTON1}
-    Wait Until Page Contains Element  ${CHOOSEMODEL}
-    Click Element  ${CHOOSEMODEL}
-    #Wait Until Page Contains  You can test the model below
-    #Wait Until Page Contains Element  ${TESTTEXTFIELD}
-    #Input Text  ${TESTTEXTFIELD}  Stay a while and listen. If you want to fight Diablo, lord of the Destruction then you need the password to the monasteries gate.
-    #Wait Until Page Contains Element  ${TESTBUTTON}
-    #Click Element  ${TESTBUTTON}
-    #Wait Until Page Contains Element  ${TESTLABELING}
-    #Element Text Should Be  ${TESTLABELING}  ACCOUNT
-    Wait Until Page Contains Element  ${MODELSBUTTON2}
-    Click Element  ${MODELSBUTTON2}
-
 Select My First Workspace As Workspace
     Sleep  1s
     Wait Until Location Is  https://stag.labelf.ai/main/64/models/view
@@ -65,10 +44,30 @@ Create A Trained Model
 Choose Model And Click On Share
     Wait Until Page Contains Element  ${CHOOSEMODEL}
     Click Element  ${CHOOSEMODEL}
-    Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
-    Click Element  ${CLICKDOWNTRAININGELF}
+    #Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
+    #Click Element  ${CLICKDOWNTRAININGELF}
     Wait Until Page Contains  Customer support data model
 
+Choose Model And Verify Correct Labeling
+    Wait Until Page Contains Element  ${CHOOSEMODEL}
+    Click Element  ${CHOOSEMODEL}
+    #Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
+    #Click Element  ${CLICKDOWNTRAININGELF}
+    Wait Until Page Contains  This is an overview of the projected distribution of labels (user labeled+predicted by the model) across your datasets.
+   # Sleep  900 s
+    Wait Until Page Contains Element  ${MODELSBUTTON1}
+    Click Element  ${MODELSBUTTON1}
+    Wait Until Page Contains Element  ${CHOOSEMODEL}
+    Click Element  ${CHOOSEMODEL}
+    #Wait Until Page Contains  You can test the model below
+    #Wait Until Page Contains Element  ${TESTTEXTFIELD}
+    #Input Text  ${TESTTEXTFIELD}  Stay a while and listen. If you want to fight Diablo, lord of the Destruction then you need the password to the monasteries gate.
+    #Wait Until Page Contains Element  ${TESTBUTTON}
+    #Click Element  ${TESTBUTTON}
+    #Wait Until Page Contains Element  ${TESTLABELING}
+    #Element Text Should Be  ${TESTLABELING}  ACCOUNT
+    Wait Until Page Contains Element  ${MODELSBUTTON2}
+    Click Element  ${MODELSBUTTON2}
 
 Log in User Marcus
     Input Text  ${MAIL}   marcus.davidsson@iths.se
@@ -114,10 +113,10 @@ User can shara model with a link in setting.
     [Tags]  TestTrainedModel
     Choose Model And Click On Share
 
-User outside labelf can acces the model by the link and try out the model.
-    [Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
-    [Tags]  TestTrainedModel
-    Click On Shared Link And Test The Model
+#User outside labelf can acces the model by the link and try out the model.
+    #[Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
+    #["Tags]  TestTrainedModel
+    #Click On Shared Link And Test The Model
 
 #User delete model and then logging out
     #[Documentation]  Once a model is created; being able to delete a model and then log out
