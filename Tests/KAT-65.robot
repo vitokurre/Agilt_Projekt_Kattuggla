@@ -55,8 +55,10 @@ Choose Model And Click On Share
     Click Element  ${SHAREBUTTON}
     Wait Until Page Contains  If you share a model, you can send the link to friends and colleagues and let them try it out!
     Sleep  2s
-    Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/span/div/div[1]/table/tbody/tr/td[3]/a
-    ${SHAREDLINKTOSAVE}  Get Text  ${SHAREDLINKTOCLICK}
+    Wait Until Page Contains Element  ${SHAREDLINKTOCLICK}
+    ${SHAREDLINKTOSAVE}  Get Element Attribute  ${SHAREDLINKTOCLICK}  href
+    #Should Be Equal    ${SHAREDLINKTOSAVE}    https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
+
 
 Log out user from model
     Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
@@ -66,8 +68,10 @@ Log out user from model
     Wait Until Page Contains Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
 
 Click On Shared Link And Test The Model
-    Go to  https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
-    Wait Until Location Is  https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
+    Log  ${SHAREDLINKTOSAVE}
+    Go to  ${SHAREDLINKTOSAVE}
+    Wait Until Location Is  ${SHAREDLINKTOSAVE}
+    #https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
     Sleep  2s
 
 
