@@ -47,6 +47,7 @@ Choose Model And Click On Share
     #Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
     #Click Element  ${CLICKDOWNTRAININGELF}
     Wait Until Page Contains  Customer support data model
+    Sleep  2s
 
 Choose Model And Verify Correct Labeling
     Wait Until Page Contains Element  ${CHOOSEMODEL}
@@ -68,6 +69,7 @@ Choose Model And Verify Correct Labeling
     #Element Text Should Be  ${TESTLABELING}  ACCOUNT
     Wait Until Page Contains Element  ${MODELSBUTTON2}
     Click Element  ${MODELSBUTTON2}
+
 
 Log in User Marcus
     Input Text  ${MAIL}   marcus.davidsson@iths.se
@@ -91,7 +93,7 @@ ${TESTLABELING}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div
 ${CLICKDOWNTRAININGELF}  //*[@id="app"]/div[3]/div/div/button/div/i
 ${STRINGTOCEHCK}
 ${MODELSBUTTON2}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
-${MODELSBUTTON1}  //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div
+${MODELSBUTTON1}  //*[@id="models-button-navbar"]/div
 
 *** Test Cases ***
 
@@ -103,12 +105,12 @@ User is logged in; have changed workspace and created a model; ready to train a 
     Select My First Workspace As Workspace
     #Create A Trained Model
 
-User can test correct labeling on trained model.
-    [Documentation]  Once logged in; being able to change workspace
-    [Tags]  TestTrainedModel
-    Choose Model And Verify Correct Labeling
+#User can test correct labeling on trained model.
+    #[Documentation]  Once logged in; being able to change workspace
+    #[Tags]  TestTrainedModel
+    #Choose Model And Verify Correct Labeling
 
-User can shara model with a link in setting.
+User can share model with a link in setting.
     [Documentation]  Once model works; being able to share the model
     [Tags]  TestTrainedModel
     Choose Model And Click On Share
