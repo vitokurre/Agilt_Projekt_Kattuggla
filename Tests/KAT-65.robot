@@ -43,11 +43,35 @@ Create A Trained Model
 
 Choose Model And Click On Share
     Wait Until Page Contains Element  ${CHOOSEMODEL}
-    Click Element  ${CHOOSEMODEL}
+    #Click Element  ${CHOOSEMODEL}
     #Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
     #Click Element  ${CLICKDOWNTRAININGELF}
-    Wait Until Page Contains  Customer support data model
+    #Wait Until Page Contains  Customer support data model
+    #Sleep  2s
+    Wait Until Page Contains  My Models
+    Wait Until Page Contains Element  ${MODELMENU}
+    Click Element  ${MODELMENU}
+    Wait Until Page Contains Element  ${SHAREBUTTON}
+    Click Element  ${SHAREBUTTON}
+    Wait Until Page Contains  If you share a model, you can send the link to friends and colleagues and let them try it out!
     Sleep  2s
+    Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/span/div/div[1]/table/tbody/tr/td[3]/a
+    ${SHAREDLINKTOSAVE}  Get Text  ${SHAREDLINKTOCLICK}
+
+Log out user from model
+    Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
+    Click Element  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
+    Wait Until Page Contains Element  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
+    Click Element  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
+    Wait Until Page Contains Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
+
+Click On Shared Link And Test The Model
+    Go to  https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
+    Wait Until Location Is  https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
+    Sleep  2s
+
+
+
 
 Choose Model And Verify Correct Labeling
     Wait Until Page Contains Element  ${CHOOSEMODEL}
@@ -94,6 +118,10 @@ ${CLICKDOWNTRAININGELF}  //*[@id="app"]/div[3]/div/div/button/div/i
 ${STRINGTOCEHCK}
 ${MODELSBUTTON2}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
 ${MODELSBUTTON1}  //*[@id="models-button-navbar"]/div
+${SHAREBUTTON}  //*[@id="sharing-button-model-card"]/div[1]/div
+${MODELMENU}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
+${SHAREDLINKTOCLICK}
+${SHAREDLINKTOSAVE}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/span/div/div[1]/table/tbody/tr/td[3]/a
 
 *** Test Cases ***
 
@@ -114,11 +142,12 @@ User can share model with a link in setting.
     [Documentation]  Once model works; being able to share the model
     [Tags]  TestTrainedModel
     Choose Model And Click On Share
+    Log out user from model
 
-#User outside labelf can acces the model by the link and try out the model.
-    #[Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
-    #["Tags]  TestTrainedModel
-    #Click On Shared Link And Test The Model
+User outside labelf can acces the model by the link and try out the model.
+    [Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
+    [Tags]  TestTrainedModel
+    Click On Shared Link And Test The Model
 
 #User delete model and then logging out
     #[Documentation]  Once a model is created; being able to delete a model and then log out
