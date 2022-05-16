@@ -41,7 +41,8 @@ Create A Trained Model
     Wait Until Page Contains Element  ${CONTINUESCRATCH}
     Sleep  1s
     Click Element  ${CONTINUESCRATCH}
-    Sleep  900s
+    #
+    #Sleep  900s
 
 Choose Model And Click On Share
     Sleep  1s
