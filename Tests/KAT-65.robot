@@ -39,9 +39,12 @@ Create A Trained Model
     Sleep  1s
     Wait Until Page Contains  Name your model
     Wait Until Page Contains Element  ${CONTINUESCRATCH}
+    Sleep  1s
     Click Element  ${CONTINUESCRATCH}
+    Sleep  900s
 
 Choose Model And Click On Share
+    Sleep  1s
     Wait Until Page Contains Element  ${CHOOSEMODEL}
     #Click Element  ${CHOOSEMODEL}
     #Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
@@ -50,54 +53,43 @@ Choose Model And Click On Share
     #Sleep  2s
     Wait Until Page Contains  My Models
     Wait Until Page Contains Element  ${MODELMENU}
+    Sleep  1s
     Click Element  ${MODELMENU}
     Wait Until Page Contains Element  ${SHAREBUTTON}
+    Sleep  1s
     Click Element  ${SHAREBUTTON}
     Wait Until Page Contains  If you share a model, you can send the link to friends and colleagues and let them try it out!
     Sleep  2s
     Wait Until Page Contains Element  ${SHAREDLINKTOCLICK}
+    Sleep  1s
     ${SHAREDLINKTOSAVE}  Get Element Attribute  ${SHAREDLINKTOCLICK}  href
-    #Should Be Equal    ${SHAREDLINKTOSAVE}    https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
+    Set Global Variable  ${SHAREDLINKTOSAVE}
+    Should Be Equal    ${SHAREDLINKTOSAVE}    https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
+    Log   ${SHAREDLINKTOSAVE}
+
 
 
 Log out user from model
-    Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
-    Click Element  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
-    Wait Until Page Contains Element  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
-    Click Element  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
-    Wait Until Page Contains Element  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
+    Wait Until Page Contains Element  ${ACCOUNTMENU}
+    Sleep  1s
+    Click Element  ${ACCOUNTMENU}
+    Wait Until Page Contains Element  ${LOGOUT}
+    Sleep  1s
+    Click Element  ${LOGOUT}
+    Wait Until Page Contains Element  ${DONTHAVEANACCOUNT?}
+    Log   ${SHAREDLINKTOSAVE}
 
 Click On Shared Link And Test The Model
     Log  ${SHAREDLINKTOSAVE}
     Go to  ${SHAREDLINKTOSAVE}
     Wait Until Location Is  ${SHAREDLINKTOSAVE}
-    #https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
-    Sleep  2s
-
-
-
-
-Choose Model And Verify Correct Labeling
-    Wait Until Page Contains Element  ${CHOOSEMODEL}
-    Click Element  ${CHOOSEMODEL}
-    #Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
-    #Click Element  ${CLICKDOWNTRAININGELF}
-    Wait Until Page Contains  This is an overview of the projected distribution of labels (user labeled+predicted by the model) across your datasets.
-   # Sleep  900 s
-    Wait Until Page Contains Element  ${MODELSBUTTON1}
-    Click Element  ${MODELSBUTTON1}
-    Wait Until Page Contains Element  ${CHOOSEMODEL}
-    Click Element  ${CHOOSEMODEL}
-    #Wait Until Page Contains  You can test the model below
-    #Wait Until Page Contains Element  ${TESTTEXTFIELD}
-    #Input Text  ${TESTTEXTFIELD}  Stay a while and listen. If you want to fight Diablo, lord of the Destruction then you need the password to the monasteries gate.
-    #Wait Until Page Contains Element  ${TESTBUTTON}
-    #Click Element  ${TESTBUTTON}
-    #Wait Until Page Contains Element  ${TESTLABELING}
-    #Element Text Should Be  ${TESTLABELING}  ACCOUNT
-    Wait Until Page Contains Element  ${MODELSBUTTON2}
-    Click Element  ${MODELSBUTTON2}
-
+    Wait Until Page Contains  Hey! Write an example and click submit to try me out! You can try me out in any language! Below are the labels if you need more context:
+    Wait Until Page Contains Element  ${TEXTAREA}
+    Input Text  ${TEXTAREA}  I just ordered a pizza from Mordors Kitchen, when will it be delivered to my home here in Rivendell? Please use the eagles and not foodora this time. Last time my food was cold.
+    Wait Until Page Contains Element  ${SUBMITBUTTON}
+    Click Element  ${SUBMITBUTTON}
+    Wait Until Page Contains Element  ${TESTLABELINGOUTLOGGED}
+    Element Text Should Be  ${TESTLABELINGOUTLOGGED}  ORDER
 
 Log in User Marcus
     Input Text  ${MAIL}   marcus.davidsson@iths.se
@@ -124,8 +116,15 @@ ${MODELSBUTTON2}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
 ${MODELSBUTTON1}  //*[@id="models-button-navbar"]/div
 ${SHAREBUTTON}  //*[@id="sharing-button-model-card"]/div[1]/div
 ${MODELMENU}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
-${SHAREDLINKTOCLICK}
-${SHAREDLINKTOSAVE}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/span/div/div[1]/table/tbody/tr/td[3]/a
+${SHAREDLINKTOCLICK}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/span/div/div[1]/table/tbody/tr/td[3]/a
+${SHAREDLINKTOSAVE}
+${TEXTAREA}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[2]/div/div[1]/div/textarea
+${SUBMITBUTTON}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[3]/button/div
+${TESTLABELINGOUTLOGGED}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[4]/div[1]/nav/div[1]/div[1]
+${ACCOUNTMENU}  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
+${LOGOUT}  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
+${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
+
 
 *** Test Cases ***
 
@@ -135,12 +134,7 @@ User is logged in; have changed workspace and created a model; ready to train a 
     Go To Web Page
     Log in User Marcus
     Select My First Workspace As Workspace
-    #Create A Trained Model
-
-#User can test correct labeling on trained model.
-    #[Documentation]  Once logged in; being able to change workspace
-    #[Tags]  TestTrainedModel
-    #Choose Model And Verify Correct Labeling
+    Create A Trained Model
 
 User can share model with a link in setting.
     [Documentation]  Once model works; being able to share the model
@@ -153,11 +147,13 @@ User outside labelf can acces the model by the link and try out the model.
     [Tags]  TestTrainedModel
     Click On Shared Link And Test The Model
 
-#User delete model and then logging out
-    #[Documentation]  Once a model is created; being able to delete a model and then log out
-    #[Tags]  Model
-    #Delete Model
-    #Log Out User
+User logs in, delete model and then logging out
+    [Documentation]  Once having a created model; being able to log in, delete a model and then log out
+    [Tags]  Model
+    Go To Web Page
+    Log in User Marcus
+    Delete Model
+    Log Out User
 
 
 
