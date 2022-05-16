@@ -116,7 +116,7 @@ Delete Model 2
     Wait Until Page Contains Element  ${MODELMENU2}
     Click Element  ${MODELMENU2}
     Wait Until Page Contains Element  ${DELETEBUTTOM}
-    Click Element  ${DELETEBUOTTOM}
+    Click Element  ${DELETEBUTTOM}
     Sleep  1s
     Wait Until Page Contains Element  ${SUREDELETE}
     Click Element  ${SUREDELETE}
@@ -147,7 +147,14 @@ ${ACCOUNTMENU}  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
 ${LOGOUT}  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
 ${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
 ${MODELMENU2}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
-${DELETEBUTTOM}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[1]
+${DELETEBUTTOM}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
+
+           ##//*[@id="app"]/div[3]/div/div/div[2]
+           ##//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
+           ##//*[@id="app"]/div[3]/div/div/div[2]/a
+           ##//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]
+           #//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
+           #//*[@id="app"]/div[3]/div/div/div[2]/a/div[1]/div                      #Original
 ${IAMSUREDELETE}  //*[@id="app"]/div[3]/div/div/div[3]/button/div
 
 
