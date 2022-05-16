@@ -17,6 +17,7 @@ Log in User Dawid
     Wait Until Page Contains  Welcome to Labelf!
 
 Create Dataset With Mixed Languages
+    Sleep  1s
     Click Element  ${NEWMODEL}
     Wait Until Page Contains Element  ${CONTINUETOCREATEMODEL}
     Click Element   ${CONTINUETOCREATEMODEL}
@@ -36,21 +37,37 @@ Create Dataset With Mixed Languages
     Sleep  2s
 
 Train Created Dataset With Mixed Languages
-    Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div  #Overfiew
-    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div  #Overfiew
-    #Sleep  2s
-    #Wait Until Page Contains  I'm currently processing your data, come back later!
-    #Click Element  //*[@id="app"]/div[3]/div/div/button/div/i  #SHUTDOWNTRAININFORMATION
-    #Wait Until Page Contains  This is an overview of the projected distribution of labels (user labeled+predicted by the model) across your datasets.
-    #Sleep  900 s
-    #Wait Until Page Contains Element  //*[@id="models-button-navbar"]/div/span[1]  #MODELSBUTTON
-    #Click Element  //*[@id="models-button-navbar"]/div/span[1]  #MODELSBUTTON
-    Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[6]/div  #STARTTRAINING
-    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[6]/div  #STARTTRAINING
-    Wait Until Page Contains Element  //*[@id="app"]/div[5]/div/div[1]/div[2]/div/div/div/nav/div/button[1]/div  #LANGUAGEFILTER
-    Click Element  //*[@id="app"]/div[5]/div/div[1]/div[2]/div/div/div/nav/div/button[1]/div  #LANGUAGEFILTER
-    Wait Until Page Contains Element  //*[@id="app"]/div[14]/div/div[1]/div/div[2]/i  #SWEDISHLANGUAGE
-    Click Element  //*[@id="app"]/div[14]/div/div[1]/div/div[2]/i  #SWEDISHLANGUAGE
+    Wait Until Page Contains Element  ${OVERFIEW}
+    Click Element  ${OVERFIEW}
+    Sleep  2s
+    Wait Until Page Contains  I'm currently processing your data, come back later!
+    Click Element  ${SHUTDOWNTRAININFORMATION}
+    Wait Until Page Contains  This is an overview of the projected distribution of labels (user labeled+predicted by the model) across your datasets.
+    Sleep  1200 s
+    #Wait Until Page Contains Element  ${MODELSBUTTON}
+    #Click Element  ${MODELSBUTTON}
+    #Sleep  1s
+    Wait Until Page Contains Element  ${STARTTRAINING} 
+    Click Element  ${STARTTRAINING}
+    Sleep  1s
+    Wait Until Page Contains Element  ${LANGUAGEFILTER}
+    Click Element  ${LANGUAGEFILTER}
+    Sleep  1s
+    Wait Until Page Contains Element  ${SWEDISHLANGUAGE}
+    Wait Until Page Contains Element  ${DANISHLANGUAGE}
+    Wait Until Page Contains Element  ${GERMANLANGUAGE}
+    Wait Until Page Contains Element  ${ENGLISHLANGUAGE}
+    Sleep  1s
+    Scroll Element Into View  ${NORWEGIANLANGUAGE}
+    Sleep  1s
+    Wait Until Page Contains Element  ${UNKNOWNLANGUAGE}
+    Wait Until Page Contains Element  ${FINNISHLANGUAGE}
+    Sleep  1s
+    Wait Until Page Contains Element  ${CLOSEBUTTON}
+    Click Element  ${CLOSEBUTTON}
+    Sleep  1s
+    Wait Until Page Contains Element  ${MODELSBUTTON}
+    Click Element  ${MODELSBUTTON}
 
 *** Variables ***
 
@@ -63,6 +80,19 @@ ${FEEDBACK}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[1]/div/
 ${CONTINUETOCREATEDATASET2}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
 ${DESCRIPTION}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[1]/div/div/div[2]/div/div/div[1]/div/textarea
 ${CREATETEXTAREA}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button/div
+${OVERFIEW}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+${STARTTRAINING}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[6]/div
+${LANGUAGEFILTER}  //*[@id="app"]/div[5]/div/div[1]/div[2]/div/div/div/nav/div/button[1]/div
+${SWEDISHLANGUAGE}  //*[@id="app"]/div[14]/div/div[1]/div/div[2]/i
+${SHUTDOWNTRAININFORMATION}  //*[@id="app"]/div[3]/div/div/button/div/i
+${MODELSBUTTON}  //*[@id="models-button-navbar"]/div/span[1]
+${DANISHLANGUAGE}  //*[@id="app"]/div[14]/div/div[2]/div/div[2]/i
+${GERMANLANGUAGE}  //*[@id="app"]/div[14]/div/div[3]/div/div[2]/i
+${ENGLISHLANGUAGE}  //*[@id="app"]/div[14]/div/div[4]/div/div[2]/i
+${NORWEGIANLANGUAGE}   //*[@id="app"]/div[14]/div/div[7]/div/div[2]/i
+${UNKNOWNLANGUAGE}  //*[@id="app"]/div[14]/div/div[6]/div/div[2]/i
+${FINNISHLANGUAGE}  //*[@id="app"]/div[14]/div/div[5]/div/div[2]/i
+${CLOSEBUTTON}  //*[@id="close-button"]/div/i
 
 *** Test Cases ***
 
