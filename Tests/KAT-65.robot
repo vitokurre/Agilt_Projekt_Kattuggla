@@ -61,11 +61,14 @@ Choose Model And Click On Share
     Click Element  ${SHAREBUTTON}
     Wait Until Page Contains  If you share a model, you can send the link to friends and colleagues and let them try it out!
     Sleep  2s
+    #Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
+    #Click Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
+    #Wait Until Page contains Element  //*[@id="app"]/div[2]/div/div/span/div/div[1]/table/tbody/tr/td[3]/span/span/button/div/i
+    #Click Element  //*[@id="app"]/div[2]/div/div/span/div/div[1]/table/tbody/tr/td[3]/span/span/button/div/i
     Wait Until Page Contains Element  ${SHAREDLINKTOCLICK}
     Sleep  1s
     ${SHAREDLINKTOSAVE}  Get Element Attribute  ${SHAREDLINKTOCLICK}  href
     Set Global Variable  ${SHAREDLINKTOSAVE}
-    Should Be Equal    ${SHAREDLINKTOSAVE}    https://stag.labelf.ai/shared/b7a8085932704503880de409cb996b15
     Log   ${SHAREDLINKTOSAVE}
 
 
@@ -92,7 +95,7 @@ Click On Shared Link And Test The Model
     Wait Until Page Contains Element  ${TESTLABELINGOUTLOGGED}
     Element Text Should Be  ${TESTLABELINGOUTLOGGED}  ORDER
 
-Log in User Marcus
+Log in User Marcus 1
     Input Text  ${MAIL}   marcus.davidsson@iths.se
     Input Text  ${PASSWORD}  vitoKurre2022
     Wait Until Element Is Visible  ${COOKIEDOWN}
@@ -100,6 +103,24 @@ Log in User Marcus
     Click Element   ${LOGINBUTTON}
     #Wait Until Page Contains  Welcome to Labelf!
 
+Log in User Marcus 2
+    Input Text  ${MAIL}   marcus.davidsson@iths.se
+    Input Text  ${PASSWORD}  vitoKurre2022
+    #Wait Until Element Is Visible  ${COOKIEDOWN}
+    #Click Element  ${COOKIEDOWN}
+    Click Element   ${LOGINBUTTON}
+    #Wait Until Page Contains  Welcome to Labelf!
+
+Delete Model 2
+    Wait Until Page Contains  My Models
+    Wait Until Page Contains Element  ${MODELMENU2}
+    Click Element  ${MODELMENU2}
+    Wait Until Page Contains Element  ${DELETEBUTTOM}
+    Click Element  ${DELETEBUOTTOM}
+    Sleep  1s
+    Wait Until Page Contains Element  ${SUREDELETE}
+    Click Element  ${SUREDELETE}
+    Sleep  1s
 
 *** Variables ***
 ${TRAINDIRECTLYONLABELS}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/label/div
@@ -125,6 +146,9 @@ ${TESTLABELINGOUTLOGGED}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/
 ${ACCOUNTMENU}  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
 ${LOGOUT}  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
 ${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
+${MODELMENU2}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
+${DELETEBUTTOM}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[1]
+${IAMSUREDELETE}  //*[@id="app"]/div[3]/div/div/div[3]/button/div
 
 
 *** Test Cases ***
@@ -133,9 +157,9 @@ User is logged in; have changed workspace and created a model; ready to train a 
     [Documentation]  Once logged in; being able to change workspace
     [Tags]  StartUp
     Go To Web Page
-    Log in User Marcus
+    Log in User Marcus 1
     Select My First Workspace As Workspace
-    Create A Trained Model
+    #Create A Trained Model
 
 User can share model with a link in setting.
     [Documentation]  Once model works; being able to share the model
@@ -152,8 +176,8 @@ User logs in, delete model and then logging out
     [Documentation]  Once having a created model; being able to log in, delete a model and then log out
     [Tags]  Model
     Go To Web Page
-    Log in User Marcus
-    Delete Model
+    Log in User Marcus 2
+    Delete Model 2
     Log Out User
 
 
