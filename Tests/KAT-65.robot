@@ -169,7 +169,7 @@ ${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button
 ${MODELMENU2}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${DELETEBUTTOM}  //*[@id="app"]/div[2]/div/div/div[2]/a
 ${IAMSUREDELETE}  //*[@id="app"]/div[6]/div/div/div[3]/button
-${LOGOUTUSER2}  //*[@id="app"]/div[6]/div/div[3]/div/a/div[2]
+${LOGOUTUSER2}  //*[@id="app"]/div[5]/div/div[3]/div/a
 
 #//*[@id="app"]/div[6]/div/div[3]
 #//*[@id="app"]/div[6]/div/div[3]/div/a
@@ -179,6 +179,7 @@ ${LOGOUTUSER2}  //*[@id="app"]/div[6]/div/div[3]/div/a/div[2]
 #//*[@id="app"]/div[6]/div/div[3]/div/a/div[2]/i
 #//*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
 #//*[@id="app"]/div[6]/div/div[3]/div/a/div[2]
+#//*[@id="app"]/div[5]/div/div[3]/div/a
 
 
 *** Test Cases ***
