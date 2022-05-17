@@ -118,8 +118,8 @@ Delete Model 2
     Wait Until Page Contains Element  ${DELETEBUTTOM}
     Click Element  ${DELETEBUTTOM}
     Sleep  1s
-    Wait Until Page Contains Element  ${SUREDELETE}
-    Click Element  ${SUREDELETE}
+    Wait Until Page Contains Element  ${IAMSUREDELETE}
+    Click Element  ${IAMSUREDELETE}
     Sleep  1s
 
 *** Variables ***
@@ -138,8 +138,6 @@ ${MODELSBUTTON2}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
 ${MODELSBUTTON1}  //*[@id="models-button-navbar"]/div
 ${SHAREBUTTON}  //*[@id="sharing-button-model-card"]/div[1]/div
 
-
-
 ${MODELMENU}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${SHAREDLINKTOCLICK}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/span/div/div[1]/table/tbody/tr/td[3]/a
 ${SHAREDLINKTOSAVE}
@@ -147,17 +145,12 @@ ${TEXTAREA}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[2]/di
 ${SUBMITBUTTON}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[3]/button/div
 ${TESTLABELINGOUTLOGGED}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[4]/div[1]/nav/div[1]/div[1]
 ${ACCOUNTMENU}  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
-${LOGOUT}  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
+${LOGOUT}  //*[@id="app"]/div[6]/div/div[3]/div/a//*[@id="app"]/div[6]/div/div[3]/div/a
+
+            #//*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
 ${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
 ${MODELMENU2}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${DELETEBUTTOM}  //*[@id="app"]/div[2]/div/div/div[2]/a
-
-           ##//*[@id="app"]/div[3]/div/div/div[2]
-           ##//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
-           ##//*[@id="app"]/div[3]/div/div/div[2]/a
-           ##//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]
-           #//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
-           #//*[@id="app"]/div[3]/div/div/div[2]/a/div[1]/div                      #Original
 ${IAMSUREDELETE}  //*[@id="app"]/div[6]/div/div/div[3]/button
 
 
@@ -188,7 +181,7 @@ User logs in, delete model and then logging out
     Go To Web Page
     Log in User Marcus 2
     Delete Model 2
-    Log Out User
+    Log out user from model
 
 
 
