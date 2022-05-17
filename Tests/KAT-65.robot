@@ -137,6 +137,9 @@ ${STRINGTOCEHCK}
 ${MODELSBUTTON2}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
 ${MODELSBUTTON1}  //*[@id="models-button-navbar"]/div
 ${SHAREBUTTON}  //*[@id="sharing-button-model-card"]/div[1]/div
+
+
+
 ${MODELMENU}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${SHAREDLINKTOCLICK}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/span/div/div[1]/table/tbody/tr/td[3]/a
 ${SHAREDLINKTOSAVE}
@@ -147,7 +150,7 @@ ${ACCOUNTMENU}  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
 ${LOGOUT}  //*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
 ${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
 ${MODELMENU2}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
-${DELETEBUTTOM}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
+${DELETEBUTTOM}  //*[@id="app"]/div[2]/div/div/div[2]/a
 
            ##//*[@id="app"]/div[3]/div/div/div[2]
            ##//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
@@ -155,7 +158,7 @@ ${DELETEBUTTOM}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
            ##//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]
            #//*[@id="app"]/div[3]/div/div/div[2]/a/div[2]/i
            #//*[@id="app"]/div[3]/div/div/div[2]/a/div[1]/div                      #Original
-${IAMSUREDELETE}  //*[@id="app"]/div[3]/div/div/div[3]/button/div
+${IAMSUREDELETE}  //*[@id="app"]/div[6]/div/div/div[3]/button
 
 
 *** Test Cases ***
