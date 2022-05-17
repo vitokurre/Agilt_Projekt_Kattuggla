@@ -42,13 +42,13 @@ Create A Trained Model
     Sleep  1s
     Click Element  ${CONTINUESCRATCH}
     #
-    #Sleep  900s
+    Sleep  900s
     #Här behöver vi logga ut
-    Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div
-    Click Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div
-    Sleep  1s
-    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
-    Click Element  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
+    #Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div
+    #Click Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div
+    #Sleep  1s
+    #Wait Until Page Contains Element  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
+    #Click Element  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
 
 Choose Model And Click On Share
     Sleep  1s
@@ -67,6 +67,18 @@ Choose Model And Click On Share
     Click Element  ${SHAREBUTTON}
     Wait Until Page Contains  If you share a model, you can send the link to friends and colleagues and let them try it out!
     Sleep  2s
+
+    #Här ligger vi in det nya***
+
+    Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
+    Click Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
+
+    Wait Until Page Contains Element  //*[@id="app"]/div[2]/div/div/span/div[1]/div[1]/table/tbody/tr/td[3]/span/span/button/div
+    Click Element  //*[@id="app"]/div[2]/div/div/span/div[1]/div[1]/table/tbody/tr/td[3]/span/span/button/div
+
+    #här slutar det nya ***
+
+
     #Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
     #Click Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
     #Wait Until Page contains Element  //*[@id="app"]/div[2]/div/div/span/div/div[1]/table/tbody/tr/td[3]/span/span/button/div/i
@@ -192,16 +204,20 @@ User is logged in; have changed workspace and created a model; ready to train a 
     Select My First Workspace As Workspace
     Create A Trained Model
 
-#User can share model with a link in setting.
-    #[Documentation]  Once model works; being able to share the model
-    #[Tags]  TestTrainedModel
-    #Choose Model And Click On Share
-    #Log out user from model
+User can share model with a link in setting.
+    [Documentation]  Once model works; being able to share the model
+    [Tags]  TestTrainedModel
+    Choose Model And Click On Share
+    Log out user from model
 
-#User outside labelf can acces the model by the link and try out the model.
-    #[Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
-    #[Tags]  TestTrainedModel
-    #Click On Shared Link And Test The Model
+
+#User need to click on share
+
+
+User outside labelf can acces the model by the link and try out the model.
+    [Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
+    [Tags]  TestTrainedModel
+    Click On Shared Link And Test The Model
 
 User logs in, delete model and then logging out
     [Documentation]  Once having a created model; being able to log in, delete a model and then log out
