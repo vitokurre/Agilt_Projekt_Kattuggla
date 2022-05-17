@@ -43,6 +43,12 @@ Create A Trained Model
     Click Element  ${CONTINUESCRATCH}
     #
     #Sleep  900s
+    #Här behöver vi logga ut
+    Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div
+    Click Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div
+    Sleep  1s
+    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
+    Click Element  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
 
 Choose Model And Click On Share
     Sleep  1s
@@ -122,6 +128,19 @@ Delete Model 2
     Click Element  ${IAMSUREDELETE}
     Sleep  1s
 
+Log Out User 2
+    Sleep  1s
+    Wait Until Page Contains Element  ${USERACCOUNT}
+    Click Element  ${USERACCOUNT}
+    Sleep  1s
+    Wait Until Page Contains Element  ${ACCOUNTLIST}
+    Sleep  1s
+    Wait Until PAge Contains Element  ${LOGOUTUSER2}
+    Click Element  ${LOGOUTUSER2}
+    Sleep  1s
+    Location Should Be  ${URL}
+
+
 *** Variables ***
 ${TRAINDIRECTLYONLABELS}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/label/div
 ${LASTCREATEMODELCONTINUE}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button/div
@@ -145,13 +164,12 @@ ${TEXTAREA}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[2]/di
 ${SUBMITBUTTON}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[3]/button/div
 ${TESTLABELINGOUTLOGGED}  //*[@id="app"]/div[2]/main/div/div[1]/div/div/div/div/div/div[4]/div[1]/nav/div[1]/div[1]
 ${ACCOUNTMENU}  //*[@id="app"]/div[10]/div[1]/nav/div/div[4]/div/button/div/div
-${LOGOUT}  //*[@id="app"]/div[6]/div/div[3]/div/a//*[@id="app"]/div[6]/div/div[3]/div/a
-
-            #//*[@id="app"]/div[9]/div/div[3]/div/a/div[1]
+${LOGOUT}  //*[@id="app"]/div[9]/div/div[3]/div/a
 ${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
 ${MODELMENU2}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${DELETEBUTTOM}  //*[@id="app"]/div[2]/div/div/div[2]/a
 ${IAMSUREDELETE}  //*[@id="app"]/div[6]/div/div/div[3]/button
+${LOGOUTUSER2}  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
 
 
 *** Test Cases ***
@@ -162,18 +180,18 @@ User is logged in; have changed workspace and created a model; ready to train a 
     Go To Web Page
     Log in User Marcus 1
     Select My First Workspace As Workspace
-    #Create A Trained Model
+    Create A Trained Model
 
-User can share model with a link in setting.
-    [Documentation]  Once model works; being able to share the model
-    [Tags]  TestTrainedModel
-    Choose Model And Click On Share
-    Log out user from model
+#User can share model with a link in setting.
+    #[Documentation]  Once model works; being able to share the model
+    #[Tags]  TestTrainedModel
+    #Choose Model And Click On Share
+    #Log out user from model
 
-User outside labelf can acces the model by the link and try out the model.
-    [Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
-    [Tags]  TestTrainedModel
-    Click On Shared Link And Test The Model
+#User outside labelf can acces the model by the link and try out the model.
+    #[Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
+    #[Tags]  TestTrainedModel
+    #Click On Shared Link And Test The Model
 
 User logs in, delete model and then logging out
     [Documentation]  Once having a created model; being able to log in, delete a model and then log out
@@ -181,7 +199,7 @@ User logs in, delete model and then logging out
     Go To Web Page
     Log in User Marcus 2
     Delete Model 2
-    Log out user from model
+    Log out user 2
 
 
 
