@@ -43,10 +43,12 @@ Train Created Dataset With Mixed Languages
     Wait Until Page Contains  I'm currently processing your data, come back later!
     Click Element  ${SHUTDOWNTRAININFORMATION}
     Wait Until Page Contains  This is an overview of the projected distribution of labels (user labeled+predicted by the model) across your datasets.
-    Sleep  1200 s
-    #Wait Until Page Contains Element  ${MODELSBUTTON}
-    #Click Element  ${MODELSBUTTON}
-    #Sleep  1s
+    Sleep  900 s
+    Wait Until Page Contains Element  ${MODELSBUTTON}
+    Click Element  ${MODELSBUTTON}
+    Sleep  1s
+    Wait Until Page Contains Element  ${OVERFIEW}
+    Click Element  ${OVERFIEW}
     Wait Until Page Contains Element  ${STARTTRAINING} 
     Click Element  ${STARTTRAINING}
     Sleep  1s
@@ -102,10 +104,10 @@ User can Log in
     Go To Web Page
     Log in User Dawid
 
-#User Can Create Dataset with Different Languages
-    #[Documentation]  Once Language File is apploaded; being able to create Dataset with that file
-    #[Tags]  Dataset
-    #Create Dataset With Mixed Languages
+User Can Create Dataset with Different Languages
+    [Documentation]  Once Language File is apploaded; being able to create Dataset with that file
+    [Tags]  Dataset
+    Create Dataset With Mixed Languages
 
 User Can Train Dataset With Mixed Languages
     [Documentation]  Once Dataset is created; being able to train it
@@ -115,5 +117,5 @@ User Can Train Dataset With Mixed Languages
 User delete model and then logging out
     [Documentation]  Once a model is created; being able to delete a model and then log out
     [Tags]  Model
-    #Delete Model
+    Delete Model
     Log Out User
