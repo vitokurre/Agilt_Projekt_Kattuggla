@@ -13,7 +13,6 @@ Select My First Workspace As Workspace
     Wait Until Location Is  https://stag.labelf.ai/main/64/models/view
     Wait Until Page Contains  My first workspace
 
-
 Create A Trained Model
     Sleep  1s
     Wait Until Page Contains Element  ${NEWMODELBUTTON}
@@ -41,23 +40,11 @@ Create A Trained Model
     Wait Until Page Contains Element  ${CONTINUESCRATCH}
     Sleep  1s
     Click Element  ${CONTINUESCRATCH}
-    #
     Sleep  900s
-    #Här behöver vi logga ut
-    #Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div
-    #Click Element  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/div
-    #Sleep  1s
-    #Wait Until Page Contains Element  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
-    #Click Element  //*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
 
 Choose Model And Click On Share
     Sleep  1s
     Wait Until Page Contains Element  ${CHOOSEMODEL}
-    #Click Element  ${CHOOSEMODEL}
-    #Wait Until Page Contains Element  ${CLICKDOWNTRAININGELF}
-    #Click Element  ${CLICKDOWNTRAININGELF}
-    #Wait Until Page Contains  Customer support data model
-    #Sleep  2s
     Wait Until Page Contains  My Models
     Wait Until Page Contains Element  ${MODELMENU}
     Sleep  1s
@@ -67,29 +54,15 @@ Choose Model And Click On Share
     Click Element  ${SHAREBUTTON}
     Wait Until Page Contains  If you share a model, you can send the link to friends and colleagues and let them try it out!
     Sleep  2s
-
-    #Här ligger vi in det nya***
-
-    Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
-    Click Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
-
-    Wait Until Page Contains Element  //*[@id="app"]/div[2]/div/div/span/div[1]/div[1]/table/tbody/tr/td[3]/span/span/button/div
-    Click Element  //*[@id="app"]/div[2]/div/div/span/div[1]/div[1]/table/tbody/tr/td[3]/span/span/button/div
-
-    #här slutar det nya ***
-
-
-    #Wait Until Page Contains Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
-    #Click Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
-    #Wait Until Page contains Element  //*[@id="app"]/div[2]/div/div/span/div/div[1]/table/tbody/tr/td[3]/span/span/button/div/i
-    #Click Element  //*[@id="app"]/div[2]/div/div/span/div/div[1]/table/tbody/tr/td[3]/span/span/button/div/i
+    Wait Until Page Contains Element  ${SHAREMODELNOW}
+    Click Element  ${SHAREMODELNOW}
+    Wait Until Page Contains Element  ${CONFIRMSHAREMODELNOW}
+    Click Element  ${CONFIRMSHAREMODELNOW}
     Wait Until Page Contains Element  ${SHAREDLINKTOCLICK}
     Sleep  1s
     ${SHAREDLINKTOSAVE}  Get Element Attribute  ${SHAREDLINKTOCLICK}  href
     Set Global Variable  ${SHAREDLINKTOSAVE}
     Log   ${SHAREDLINKTOSAVE}
-
-
 
 Log out user from model
     Wait Until Page Contains Element  ${ACCOUNTMENU}
@@ -119,15 +92,12 @@ Log in User Marcus 1
     Wait Until Element Is Visible  ${COOKIEDOWN}
     Click Element  ${COOKIEDOWN}
     Click Element   ${LOGINBUTTON}
-    #Wait Until Page Contains  Welcome to Labelf!
 
 Log in User Marcus 2
     Input Text  ${MAIL}   marcus.davidsson@iths.se
     Input Text  ${PASSWORD}  vitoKurre2022
-    #Wait Until Element Is Visible  ${COOKIEDOWN}
-    #Click Element  ${COOKIEDOWN}
     Click Element   ${LOGINBUTTON}
-    #Wait Until Page Contains  Welcome to Labelf!
+
 
 Delete Model 2
     Wait Until Page Contains  My Models
@@ -168,7 +138,8 @@ ${STRINGTOCEHCK}
 ${MODELSBUTTON2}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
 ${MODELSBUTTON1}  //*[@id="models-button-navbar"]/div
 ${SHAREBUTTON}  //*[@id="sharing-button-model-card"]/div[1]/div
-
+${SHAREMODELNOW}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/div[2]/button/div
+${CONFIRMSHAREMODELNOW}  //*[@id="app"]/div[2]/div/div/span/div[1]/div[1]/table/tbody/tr/td[3]/span/span/button/div
 ${MODELMENU}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${SHAREDLINKTOCLICK}  //*[@id="app"]/div[10]/div[1]/main/div/div/div[2]/div/div[1]/div/div/div/span/div/div[1]/table/tbody/tr/td[3]/a
 ${SHAREDLINKTOSAVE}
@@ -182,17 +153,6 @@ ${MODELMENU2}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/
 ${DELETEBUTTOM}  //*[@id="app"]/div[2]/div/div/div[2]/a
 ${IAMSUREDELETE}  //*[@id="app"]/div[6]/div/div/div[3]/button
 ${LOGOUTUSER2}  //*[@id="app"]/div[5]/div/div[3]/div/a
-
-#//*[@id="app"]/div[6]/div/div[3]
-#//*[@id="app"]/div[6]/div/div[3]/div/a
-#//*[@id="app"]/div[6]/div/div[3]/div/a/div[1]
-#//*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
-#//*[@id="app"]/div[6]/div/div[3]/div/a/div[2]
-#//*[@id="app"]/div[6]/div/div[3]/div/a/div[2]/i
-#//*[@id="app"]/div[6]/div/div[3]/div/a/div[1]/div
-#//*[@id="app"]/div[6]/div/div[3]/div/a/div[2]
-#//*[@id="app"]/div[5]/div/div[3]/div/a
-
 
 *** Test Cases ***
 
@@ -209,10 +169,6 @@ User can share model with a link in setting.
     [Tags]  TestTrainedModel
     Choose Model And Click On Share
     Log out user from model
-
-
-#User need to click on share
-
 
 User outside labelf can acces the model by the link and try out the model.
     [Documentation]  Once the link to the shared model is clicked; being able to acces the model and try it out
