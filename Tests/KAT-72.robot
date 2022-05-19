@@ -10,7 +10,9 @@ Suite Teardown  End Web Test
 Train a new model
     Sleep  5s
     Wait Until Page Contains Element  ${NEWMODELBUTTON}
+    Sleep  1s
     Click Element  ${NEWMODELBUTTON}
+    Sleep  1s
     Wait Until Page Contains  Create your own model from scratch.
     Wait Until Page Contains Element  ${SETUPCONTINUE}
     Click Element  ${SETUPCONTINUE}
