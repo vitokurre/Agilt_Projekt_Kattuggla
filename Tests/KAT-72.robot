@@ -8,7 +8,7 @@ Suite Teardown  End Web Test
 
 *** Keywords ***
 Train a new model
-    Sleep  1s
+    Sleep  5s
     Wait Until Page Contains Element  ${NEWMODELBUTTON}
     Click Element  ${NEWMODELBUTTON}
     Wait Until Page Contains  Create your own model from scratch.
@@ -87,7 +87,8 @@ ${MODELSNUMBER}         //*[@id="app"]/div[7]/div[1]/main/div/div/nav/div/div[1]
 ${TESTMODEL}            //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[1]/a
 ${TESTMODEL_2}          //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div
 ${TRAINING_XBUTTON}     //*[@id="app"]/div[3]/div/div/button/div/i
-${MODEL_BUTTON}         //*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div/span[1]
+${MODEL_BUTTON}         //*[@id="models-button-navbar"]
+                        #//*[@id="app"]/div[9]/div[1]/nav/div/a[1]/div/span[1]
 ${EXEMPELTEXTFIELD}     //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[1]/div/div[1]/div/textarea
 ${EXEMPLECOLUMN}        //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[1]/div/div[1]/div
 ${SUMMITBUTTON}         //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]/div
@@ -97,7 +98,6 @@ ${MODELBUTTON_2}        //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
 
 
 *** Test Cases ***
-
 User is logged in; have changed workspace.
     [Documentation]  Once logged in; being able to change workspace
     [Tags]  StartUp
@@ -112,8 +112,8 @@ User Can Enter An Unpreset Data Point
     Enter an unpreset data point
 
 
-User Can Log out
-    [Documentation]  Once user is logged in; being able to log out
-    [Tags]  Account
-    Delete Model
-    Log Out User
+#User Can Log out
+    #[Documentation]  Once user is logged in; being able to log out
+    #[Tags]  Account
+    #Delete Model
+    #Log Out User
