@@ -6,7 +6,7 @@ Begin Web Test
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless
+    #Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --start-maximized
@@ -70,7 +70,7 @@ Delete Model
     Sleep  1s
 
 Log Out User
-    Sleep  1s
+    Sleep  2s
     Wait Until Page Contains Element  ${USERACCOUNT}
     Click Element  ${USERACCOUNT}
     Wait Until Page Contains Element  ${ACCOUNTLIST}

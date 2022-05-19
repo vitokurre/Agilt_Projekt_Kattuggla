@@ -19,6 +19,6 @@ ${DELETE}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[1]/div
 ${SUREDELETE}  //*[@id="app"]/div[3]/div/div/div[3]/button/div
 ${ATTRIBUTSTRINGTEAMKATTUGGLA}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/span
 ${USERACCOUNT}  //*[@id="app"]/div[6]/div[1]/nav/div/div[4]/div/button/div/div/span
-${ACCOUNTLIST}  //*[@id="app"]/div[5]/div
+${ACCOUNTLIST}   //*[@id="app"]/div[5]/div
 ${LOGOUT}  //*[@id="app"]/div[5]/div/div[3]/div/a/div[1]/div
 ${WINDOW}  window-size=1920,1080
