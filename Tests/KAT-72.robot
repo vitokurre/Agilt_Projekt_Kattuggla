@@ -8,13 +8,14 @@ Suite Teardown  End Web Test
 
 *** Keywords ***
 Train a new model
-    Sleep  5s
     Wait Until Page Contains Element  ${NEWMODELBUTTON}
     Sleep  1s
     Click Element  ${NEWMODELBUTTON}
     Sleep  1s
     Wait Until Page Contains  Create your own model from scratch.
+    Sleep  1s
     Wait Until Page Contains Element  ${SETUPCONTINUE}
+    Sleep  1s
     Click Element  ${SETUPCONTINUE}
     Wait Until Page Contains  Select an existing dataset or upload a new one
     Wait Until Page Contains  Synthetic generic support ticket example data that has half the dataset labeled
