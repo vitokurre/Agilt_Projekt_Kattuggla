@@ -9,21 +9,21 @@ Suite Teardown  End Web Test
 *** Keywords ***
 
 Show All Workspaces
-    Wait Until Page Contains Element  ${MAINMENU}
-    Click Element  ${MAINMENU}
+    Wait Until Page Contains Element  //*[@id="hamburger-menu-button"]
+    Click Element  //*[@id="hamburger-menu-button"]
     Wait Until Page Contains Element  ${MAINMENULIST}
     Scroll Element Into View  ${TEAMKATTUGGLA}
     Wait Until Page Contains Element  ${TEAMKATTUGGLA}
-    Wait Until Page Contains Element  ${KATTUGGLA}
+    Wait Until Page Contains Element  ${MYFIRSTWORKSPACE2}
     Wait Until Page Contains Element  ${MYFIRSTWORKSPACE}
     Wait Until Page Contains Element  ${CREATEWORKSPACE}
-    Click Element  ${MAINMENU}
+    Click Element  //*[@id="hamburger-menu-button"]
 
 *** Variables ***
-${TEAMKATTUGGLA}  //*[@id="app"]/div[3]/div/div[2]/div[5]/a/div[1]/div
-${KATTUGGLA}  //*[@id="app"]/div[3]/div/div[2]/div[4]/a/div[1]/div
-${MYFIRSTWORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]/div
-${CREATEWORKSPACE}  //*[@id="app"]/div[3]/div/div[2]/div[2]/a/div[1]/div
+${TEAMKATTUGGLA}  //*[@id="app"]/div[1]/div/div[2]/div[5]
+${MYFIRSTWORKSPACE2}  //*[@id="app"]/div[1]/div/div[2]/div[4]
+${MYFIRSTWORKSPACE}  //*[@id="app"]/div[1]/div/div[2]/div[3]
+${CREATEWORKSPACE}  //*[@id="app"]/div[1]/div/div[2]/div[2]
 
 *** Test Cases ***
 

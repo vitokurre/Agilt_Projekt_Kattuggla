@@ -26,6 +26,7 @@ Log in User
     Click Element   ${LOGINBUTTON}
     Wait Until Page Contains  Welcome to Labelf!
 
+
 Select Team Kattuggla As Workspace
     Sleep  1s
     Wait Until Page Contains Element  ${MAINMENU}
