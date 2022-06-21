@@ -21,12 +21,11 @@ Select Myworkspace As Workspace
     Wait Until Page Contains Element  ${MAINMENU}
     Click Element  ${MAINMENU}
     Wait Until Page Contains  Current Workspace:
-    Scroll Element Into View  ${MYWORKSPACE}
-    Click Element  ${MYWORKSPACE}
+    Scroll Element Into View  ${TEAMKATTUGGLAU}
     Wait Until Location Is  https://stag.labelf.ai/main/66/models/view
-    #Ceck the id in the link if its the right workspace
     Wait Until Page Contains  My first workspace
-    Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
+    Click Element  ${CLICKAWAY}
+
 
 Ueser Can Change Model Name
     Wait Until Page Contains Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a
@@ -47,6 +46,9 @@ Ueser Can Change Model Name
 *** Variables ***
 
 ${MODELSBUTTON}  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]/div
+${TEAMKATTUGGLAU}  //*[@id="app"]/div[1]/div/div[2]/div[5]/a/div[1]
+${CLICKAWAY}  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
+
 
 *** Test Cases ***
 User Can Access Website And See Front Page
