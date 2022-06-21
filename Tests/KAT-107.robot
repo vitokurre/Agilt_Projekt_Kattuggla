@@ -30,9 +30,13 @@ User Can Access Website And See Front Page
 User Can Log In
     [Documentation]  Once accessing the website; user can log in
     [Tags]  Account
-    Log in User2
+    Log in User
 
-User Can Log out
-    [Documentation]  Once user is logged in; being able to log out
+User Can Navigate On Site
+    [Documentation]  Once user is logged in; user can navigate around on the page
     [Tags]  Account
-    Log Out User
+
+#User Can Log out
+#    [Documentation]  Once user is logged in; being able to log out
+#    [Tags]  Account
+#    Log Out User
