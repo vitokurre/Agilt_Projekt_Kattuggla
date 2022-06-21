@@ -60,7 +60,9 @@ Navigate to log out
     Wait Until Page Contains Element  ${LOGOUTBUTTON}
     Click Element  ${LOGOUTBUTTON}
     Wait Until Page Contains Element  ${DONTHAVEANACCOUNT?}
-
+    ${SAVEDTEXTDONTHAVEANACCOUNT?}  Get Text  ${DONTHAVEANACCOUNT?}
+    Log  ${SAVEDTEXTDONTHAVEANACCOUNT?}
+    Should Be Equal  DON'T HAVE AN ACCOUNT? SIGN UP  ${SAVEDTEXTDONTHAVEANACCOUNT?}
 
 
 
