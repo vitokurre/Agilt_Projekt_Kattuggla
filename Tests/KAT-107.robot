@@ -64,11 +64,6 @@ Navigate to log out
     Log  ${SAVEDTEXTDONTHAVEANACCOUNT?}
     Should Be Equal  DON'T HAVE AN ACCOUNT? SIGN UP  ${SAVEDTEXTDONTHAVEANACCOUNT?}
 
-
-
-
-
-
 *** Variables ***
 
 ${MODELSMENU}  //*[@id="models-button-navbar"]/div/span[1]
