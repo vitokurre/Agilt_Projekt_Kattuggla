@@ -58,14 +58,10 @@ Select MyWorkspace As Workspace
     Click Element  ${MAINMENU}
     Wait Until Page Contains  Current Workspace:
     Scroll Element Into View    //*[@id="app"]/div[3]/div/div[2]/div[6]/a/div[1]/div
-    #//*[@id="app"]/div[4]/div/div[2]/div[3]/a/div[1]
     Click Element  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]/div
-    #//*[@id="app"]/div[4]/div/div[2]/div[3]/a/div[1]
     Wait Until Location Is  https://stag.labelf.ai/main/61/models/view
-    #Ceck the id in the link if its the right workspace
     Wait Until Page Contains  My first workspace
     Click Element  //*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button
-                   #//*[@id="app"]/div[6]/div[1]/nav/div/div[3]/div/button/div/i
 
 Change A Created Model Name And Show The Setting Page
     Wait Until Page Contains  My Models
@@ -76,7 +72,6 @@ Change A Created Model Name And Show The Setting Page
     Click Element   ${SETTINGBUTTON}
     Wait Until Page Contains    Model settings
     Wait Until Page Contains    Edit model name and description
-    #Clear Element Text     ${INPUTMODELNAME}
     Click Element   ${INPUTMODELNAME}
     Sleep  2s
     Input Text      ${INPUTMODELNAME}  _newname
@@ -88,7 +83,6 @@ Change A Created Model Name And Show The Setting Page
 
 ${OVERVIEW}     //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a
 ${SETTINGBUTTON}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/div/div/div/div/nav/div/a[1]/div/i
-
 ${INPUTMODELNAME}  //*[@id="app"]/div[4]/div[1]/main/div/div/div[2]/div/div/div/div/div/div/div[1]/form/div[2]/div/div/div[1]/div/div/div[1]/div/input
 ${SAVEBUTTON}    //*[@id="app"]/div[4]/div[1]/main/div/div/div[2]/div/div/div/div/div/div/div[1]/form/div[3]/button/div/i
 ${MODELSBUTTON}  //*[@id="app"]/div[4]/div[1]/nav/div/a[1]/div/span[1]

@@ -13,6 +13,7 @@ User Can Swich Workspace
     Wait Until Page Contains  Current Workspace:
     Scroll Element Into View  ${TKU}
     Wait Until Page Contains Element  ${TKU}
+    Sleep  1s
     Wait Until Page Contains Element  ${MFW1}
     Wait Until Page Contains Element  ${MFW2}
     Click Element  ${TKU}
@@ -29,9 +30,9 @@ User Can Swich Workspace
 
 
 *** Variables ***
-${TKU}  //*[@id="app"]/div[3]/div/div[2]/div[5]/a/div[1]
-${MFW1}  //*[@id="app"]/div[3]/div/div[2]/div[3]/a/div[1]
-${MFW2}  //*[@id="app"]/div[3]/div/div[2]/div[4]/a/div[1]
+${TKU}  //*[@id="app"]/div[1]/div/div[2]/div[5]
+${MFW1}  //*[@id="app"]/div[1]/div/div[2]/div[4]
+${MFW2}  //*[@id="app"]/div[1]/div/div[2]/div[3]
 *** Test Cases ***
 
 User Can Access Website And See Front Page
