@@ -14,13 +14,13 @@ User Can Swich Workspace
     Scroll Element Into View  ${TKU}
     Wait Until Page Contains Element  ${TKU}
     Sleep  1s
-    Wait Until Page Contains Element  ${MFW1}
-    Wait Until Page Contains Element  ${MFW2}
+    Wait Until Page Contains Element  //*[@id="app"]/div[1]/div/div[2]/div[4]
+    Wait Until Page Contains Element  //*[@id="app"]/div[1]/div/div[2]/div[3]
     Click Element  ${TKU}
     Wait Until Location Is  https://stag.labelf.ai/main/68/models/view
     Sleep  1s
-    Wait Until Page Contains Element  ${MFW1}
-    Click Element  ${MFW1}
+    Wait Until Page Contains Element  //*[@id="app"]/div[1]/div/div[2]/div[4]
+    Click Element  //*[@id="app"]/div[1]/div/div[2]/div[4]
     Wait Until Location Is  https://stag.labelf.ai/main/66/models/view
     Sleep  1s
     Wait Until Page Contains Element  ${MAINMENU}
