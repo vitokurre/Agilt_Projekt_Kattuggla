@@ -21,10 +21,13 @@ Navigate dataset
     Click Element  ${MODELSMENU}
     Wait Until Page Contains Element  ${DATASETMENU}
     Click Element  ${DATASETMENU}
-    Wait Until Page Contains Element  ${MYDATASET}
-    ${SAVEDTEXTMYDATASET}  Get Text  ${MYDATASET}
-    Log  ${SAVEDTEXTMYDATASET}
-    Should Be Equal  My Datasets (1)  ${SAVEDTEXTMYDATASET}
+    Click Element  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a
+    Wait Until Page Contains Text  Upload a .csv or excel file from my own computer. Make sure its a valid file format.
+
+    #Wait Until Page Contains Element  ${MYDATASET}
+    #${SAVEDTEXTMYDATASET}  Get Text  ${MYDATASET}
+    #Log  ${SAVEDTEXTMYDATASET}
+    #Should Be Equal  My Datasets (1)  ${SAVEDTEXTMYDATASET}
 
 Navigate to log out
     Wait Until Page Contains Element  ${MODELSMENU}
@@ -61,21 +64,21 @@ ${SAVEDTEXTDONTHAVEANACCOUNT?}
 *** Test Cases ***
 User Can Access Website And See Front Page
     [Documentation]  Once accessing the website; being able to see the frontpage
-    [Tags]  Open browser
+    [Tags]  Regression
     Go To Web Page
 
 User Can Log In
     [Documentation]  Once accessing the website; user can log in
-    [Tags]  Account
+    [Tags]  Regression
     Log in User
 
 User Can Navigate On Site Dataset
     [Documentation]  Once user is logged in; user can navigate around on the page, datasetmenu
-    [Tags]  MainMenu
+    [Tags]  Regression
     Navigate dataset
 
 
 User Can Log out
     [Documentation]  Once user is logged in and done with Labelf; being able to log out
-    [Tags]  Account
+    [Tags]  Regression
     Navigate to log out
