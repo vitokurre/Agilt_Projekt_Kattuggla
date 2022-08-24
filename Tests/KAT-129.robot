@@ -9,8 +9,8 @@ Suite Teardown  End Web Test
 *** Keywords ***
 
 Log in User
-    Input Text  ${MAIL}   checdd@gmail.com
-    Input Text  ${PASSWORD}  kufowo92
+    Input Text  ${MAIL}   marcus.davidsson@iths.se
+    Input Text  ${PASSWORD}  vitoKurre2022
     Wait Until Element Is Visible  ${COOKIEDOWN}
     Click Element  ${COOKIEDOWN}
     Click Element   ${LOGINBUTTON}
@@ -21,8 +21,26 @@ Navigate dataset
     Click Element  ${MODELSMENU}
     Wait Until Page Contains Element  ${DATASETMENU}
     Click Element  ${DATASETMENU}
-    Click Element  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a
-    Wait Until Page Contains Text  Upload a .csv or excel file from my own computer. Make sure its a valid file format.
+    Wait Until Page Contains Element  ${ADDADATASET+}
+    Click Element  ${ADDADATASET+}
+    Wait Until Page Contains  Upload a .csv or excel file from my own computer. Make sure its a valid file format.
+    Wait Until Page Contains Element  ${SELECT-CSV}
+    Click Element  ${SELECT-CSV}
+    Wait Until Page Contains  Please add a dataset containing the texts you would like to add. Right now we are supporting csv(Comma Separated Values) files and Excel files.
+    Wait Until Page Contains Element  ${DROPZONE}
+    Click Element  ${DROPZONE}
+    Sleep  2s
+
+
+    # funkar inte  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
+    # funkar inte  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a
+    # funkar inte
+    # funkar inte
+    # funkar inte
+    # funkar inte
+    # funkar inte
+
+
 
     #Wait Until Page Contains Element  ${MYDATASET}
     #${SAVEDTEXTMYDATASET}  Get Text  ${MYDATASET}
@@ -44,7 +62,9 @@ Navigate to log out
 *** Variables ***
 
 ${MODELSMENU}  //*[@id="models-button-navbar"]/div/span[1]
-${DATASETMENU}  //*[@id="app"]/div[7]/div[1]/nav/div/a[2]/div/span[1]
+${DATASETMENU}  //*[@id="app"]/div[6]/div[1]/nav/div/a[2]
+                #//*[@id="app"]/div[6]/div[1]/nav/div/a[2]/div/span[1]
+               # //*[@id="app"]/div[7]/div[1]/nav/div/a[2]/div/span[1]   <--- gamla
 ${MYMODELS}  //*[@id="app"]/div[7]/div[1]/main/div/div/nav/div/div[1]
 ${SAVEDTEXTMYMODELS}
 ${SAVEDTEXTMYDATASET}
@@ -59,6 +79,9 @@ ${USERACCOUNTMENU}  //*[@id="app"]/div[7]/div[1]/nav/div/div[4]/div/button/div/d
 ${LOGOUTBUTTON}  //*[@id="logout-button"]/div[1]/div
 ${DONTHAVEANACCOUNT?}  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[1]/div
 ${SAVEDTEXTDONTHAVEANACCOUNT?}
+${ADDADATASET+}  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
+${SELECT-CSV}  //*[@id="app"]/div[1]/div/div/div[2]/div/div/div[1]/div/div[2]/button/div
+${DROPZONE}  //*[@id="dropzone"]
 
 
 *** Test Cases ***
@@ -78,7 +101,7 @@ User Can Navigate On Site Dataset
     Navigate dataset
 
 
-User Can Log out
-    [Documentation]  Once user is logged in and done with Labelf; being able to log out
-    [Tags]  Regression
-    Navigate to log out
+#User Can Log out
+   # [Documentation]  Once user is logged in and done with Labelf; being able to log out
+    #[Tags]  Regression
+    #Navigate to log out
