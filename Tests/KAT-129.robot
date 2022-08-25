@@ -111,3 +111,4 @@ User Can Log out
     [Documentation]  Once user is logged in and done with Labelf; being able to log out
     [Tags]  Regression
     Navigate to log out
+    #hej
