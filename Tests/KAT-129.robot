@@ -29,23 +29,12 @@ Navigate dataset
     Wait Until Page Contains  Please add a dataset containing the texts you would like to add. Right now we are supporting csv(Comma Separated Values) files and Excel files.
     Wait Until Page Contains Element  ${DROPZONE}
     Click Element  ${DROPZONE}
-    Sleep  2s
+    Choose file     //*[@id="fileUpload"]  D:\\Agilt Projekt Master\\Agilt_Projekt_Kattuggla\\Resources\\Upload\\all_mixed_languages_no_se_en_de_fi_dk_-_Sheet1 (3) (1).csv
+    Sleep  5 s
+
+    Wait Until Page Contains Element  ${ADDANAMEFIELD}
 
 
-    # funkar inte  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a/div
-    # funkar inte  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a
-    # funkar inte
-    # funkar inte
-    # funkar inte
-    # funkar inte
-    # funkar inte
-
-
-
-    #Wait Until Page Contains Element  ${MYDATASET}
-    #${SAVEDTEXTMYDATASET}  Get Text  ${MYDATASET}
-    #Log  ${SAVEDTEXTMYDATASET}
-    #Should Be Equal  My Datasets (1)  ${SAVEDTEXTMYDATASET}
 
 Navigate to log out
     Wait Until Page Contains Element  ${MODELSMENU}
@@ -82,6 +71,8 @@ ${SAVEDTEXTDONTHAVEANACCOUNT?}
 ${ADDADATASET+}  //*[@id="app"]/div[5]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
 ${SELECT-CSV}  //*[@id="app"]/div[1]/div/div/div[2]/div/div/div[1]/div/div[2]/button/div
 ${DROPZONE}  //*[@id="dropzone"]
+${DRAGNDROP}  //*[@id="fileUpload"]
+${ADDANAMEFIELD}  //*[@id="app"]/div[1]/div/div/form/div/form/div[1]/div/div/div[1]/div/div/div[1]
 
 
 *** Test Cases ***
