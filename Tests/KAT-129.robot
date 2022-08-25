@@ -28,9 +28,7 @@ Navigate dataset
     Click Element  ${SELECT-CSV}
     Wait Until Page Contains  Please add a dataset containing the texts you would like to add. Right now we are supporting csv(Comma Separated Values) files and Excel files.
     Wait Until Page Contains Element  ${DROPZONE}
-    Click Element  ${DROPZONE}
-    Choose file     ${UPLOADFILE}  C:\\Users\\Jakob\\PycharmProjects\\Agilt_Projekt_Kattuggla\\Resources\\Upload\\all_mixed_languages_no_se_en_de_fi_dk_-_Sheet1 (3) (1).csv
-    Sleep  5 s
+    Choose file     ${UPLOADFILE}  C:\\Users\\Jakob\\PycharmProjects\\Agilt_Projekt_Kattuggla\\Resources\\all_mixed_languages_no_se_en_de_fi_dk_-_Sheet1.csv
 
     Double Click Element  ${NAMEDATASET}
     Press Keys  ${NAMEDATASET}  CTRL+A+DELETE
@@ -38,7 +36,6 @@ Navigate dataset
 
     Wait Until Page Contains Element  ${UPLOADBUTTON}
     Click Element  ${UPLOADBUTTON}
-    Sleep  2s
     Wait Until Page Contains  My Datasets (1)
     Wait Until Page Contains Element  ${TREEDOTS}
     Click Element  ${TREEDOTS}
@@ -66,8 +63,6 @@ Navigate to log out
 
 ${MODELSMENU}  //*[@id="models-button-navbar"]/div/span[1]
 ${DATASETMENU}  //*[@id="app"]/div[6]/div[1]/nav/div/a[2]
-                #//*[@id="app"]/div[6]/div[1]/nav/div/a[2]/div/span[1]
-               # //*[@id="app"]/div[7]/div[1]/nav/div/a[2]/div/span[1]   <--- gamla
 ${MYMODELS}  //*[@id="app"]/div[7]/div[1]/main/div/div/nav/div/div[1]
 ${SAVEDTEXTMYMODELS}
 ${SAVEDTEXTMYDATASET}
@@ -112,7 +107,7 @@ User Can Navigate On Site Dataset
     Navigate dataset
 
 
-#User Can Log out
-   # [Documentation]  Once user is logged in and done with Labelf; being able to log out
-    #[Tags]  Regression
-    #Navigate to log out
+User Can Log out
+    [Documentation]  Once user is logged in and done with Labelf; being able to log out
+    [Tags]  Regression
+    Navigate to log out
