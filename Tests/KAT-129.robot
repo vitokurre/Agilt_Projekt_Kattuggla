@@ -106,8 +106,8 @@ User Can Navigate On Site Dataset
     Navigate dataset
 
 
-#User Can Log out
-    #[Documentation]  Once user is logged in and done with Labelf; being able to log out
-    #[Tags]  Regression
-    #Navigate to log out
+User Can Log out
+    [Documentation]  Once user is logged in and done with Labelf; being able to log out
+    [Tags]  Regression
+    Navigate to log out
     #hej
