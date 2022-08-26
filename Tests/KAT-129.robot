@@ -28,8 +28,7 @@ Navigate dataset
     Click Element  ${SELECT-CSV}
     Wait Until Page Contains  Please add a dataset containing the texts you would like to add. Right now we are supporting csv(Comma Separated Values) files and Excel files.
     Wait Until Page Contains Element  ${DROPZONE}
-    Choose file     ${UPLOADFILE}  C:\\Users\\Jakob\\PycharmProjects\\Agilt_Projekt_Kattuggla\\Resources\\all_mixed_languages_no_se_en_de_fi_dk_-_Sheet1.csv
-
+    Choose file     ${UPLOADFILE}  ${CURDIR}/all_mixed_languages_no_se_en_de_fi_dk_-_Sheet1.csv
     Double Click Element  ${NAMEDATASET}
     Press Keys  ${NAMEDATASET}  CTRL+A+DELETE
     Input Text  ${NAMEDATASET}  Jakob
@@ -107,8 +106,8 @@ User Can Navigate On Site Dataset
     Navigate dataset
 
 
-User Can Log out
-    [Documentation]  Once user is logged in and done with Labelf; being able to log out
-    [Tags]  Regression
-    Navigate to log out
+#User Can Log out
+    #[Documentation]  Once user is logged in and done with Labelf; being able to log out
+    #[Tags]  Regression
+    #Navigate to log out
     #hej
