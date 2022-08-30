@@ -46,7 +46,9 @@ Navigate dataset
     Click Element  ${CONFIRMDELETE}
     Wait Until Page Contains  Welcome! Let's upload your first dataset!
 
-
+Add time
+     ${TOTALTIME}  calculate addtime  ${TIMETOADD}  ${TOTALTIME}
+     Log  ${TOTALTIME}
 
 Navigate to log out
     Wait Until Page Contains Element  ${MODELSMENU}
@@ -89,8 +91,9 @@ ${TREEDOTS}  //*[@id="app"]/div[6]/div[1]/main/div/div/div[3]/div/div/div/div/di
 ${DELETEDATASET}  //*[@id="delete-button"]
 ${CONFIRMDELETE}  //*[@id="app"]/div[2]/div/div/div[3]/button
 ${UPLOADFILE}  //*[@id="fileUpload"]
-${TIMETOADD}  3,25
-${TOTALTIME}  3,25
+${TIMETOADD}  12
+${TOTALTIME}  14
+${DIVIDEBYTHEN}  10
 
 *** Test Cases ***
 User Can Access Website And See Front Page
@@ -109,6 +112,8 @@ User Can Navigate On Site Dataset
     Navigate dataset
     #Här behövs det hämtas en tid som sparas i en variabel
     #Här behöver vi köra add_time.py script
+    Add time
+
 
 User Can Log out
     [Documentation]  Once user is logged in and done with Labelf; being able to log out
