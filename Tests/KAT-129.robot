@@ -50,6 +50,12 @@ Add time
      ${TOTALTIME}  calculate addtime  ${TIMETOADD}  ${TOTALTIME}
      Log  ${TOTALTIME}
 
+
+
+
+     #${TOTALTIME}  calculate totalaverage  ${TOTALTIME}  ${DIVIDEBYTHEN}
+     #Log  ${TOTALTIME}
+
 Navigate to log out
     Wait Until Page Contains Element  ${MODELSMENU}
     Click Element  ${MODELSMENU}
@@ -61,6 +67,11 @@ Navigate to log out
     ${SAVEDTEXTDONTHAVEANACCOUNT?}  Get Text  ${DONTHAVEANACCOUNT?}
     Log  ${SAVEDTEXTDONTHAVEANACCOUNT?}
     Should Be Equal  DON'T HAVE AN ACCOUNT? SIGN UP  ${SAVEDTEXTDONTHAVEANACCOUNT?}
+
+Calculate Average
+    ${TOTALTIME}  calculate_totalaverage  ${TOTALTIME}  ${DIVIDEBYTHEN}
+    Log  ${TOTALTIME}
+
 
 *** Variables ***
 
@@ -91,11 +102,13 @@ ${TREEDOTS}  //*[@id="app"]/div[6]/div[1]/main/div/div/div[3]/div/div/div/div/di
 ${DELETEDATASET}  //*[@id="delete-button"]
 ${CONFIRMDELETE}  //*[@id="app"]/div[2]/div/div/div[3]/button
 ${UPLOADFILE}  //*[@id="fileUpload"]
-${TIMETOADD}  12
-${TOTALTIME}  14
+${TIMETOADD}  50
+${TOTALTIME}  0
 ${DIVIDEBYTHEN}  10
 
+
 *** Test Cases ***
+
 User Can Access Website And See Front Page
     [Documentation]  Once accessing the website; being able to see the frontpage
     [Tags]  Regression
@@ -121,8 +134,8 @@ User Can Log out
     Navigate to log out
     #Här behövs en loop(forloop typ) som börjar om testet, totalt 10 ggr skall det köras innan det kan gå vidare till sista steget.
 
-#Calculations For Test
- #   [Documentation]  Once dataset has been upploaded to Labelf, time is added to total time
-  #  [Tags]  Regression
-
+Calculations For Test
+   [Documentation]  Once dataset has been upploaded to Labelf, time is added to total time
+   [Tags]  Regression
+    Calculate Average
     #Här behöver vi köra calculate_average.py och ta ut en log på variabeln.
