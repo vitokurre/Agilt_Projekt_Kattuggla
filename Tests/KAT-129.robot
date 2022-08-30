@@ -3,6 +3,8 @@ Documentation  Testing labelf
 Resource  ../Resources/keywords.robot
 Resource  ../Resources/variable.robot
 Library  SeleniumLibrary
+Library  ../Scripts/calculate_average.py
+Library  ../Scripts/add_time.py
 Suite Setup    Begin Web Test
 Suite Teardown  End Web Test
 
@@ -87,7 +89,8 @@ ${TREEDOTS}  //*[@id="app"]/div[6]/div[1]/main/div/div/div[3]/div/div/div/div/di
 ${DELETEDATASET}  //*[@id="delete-button"]
 ${CONFIRMDELETE}  //*[@id="app"]/div[2]/div/div/div[3]/button
 ${UPLOADFILE}  //*[@id="fileUpload"]
-
+${TIMETOADD}  3,25
+${TOTALTIME}  3,25
 
 *** Test Cases ***
 User Can Access Website And See Front Page
@@ -104,10 +107,17 @@ User Can Navigate On Site Dataset
     [Documentation]  Once user is logged in; user can navigate around on the page, datasetmenu
     [Tags]  Regression
     Navigate dataset
-
+    #Här behövs det hämtas en tid som sparas i en variabel
+    #Här behöver vi köra add_time.py script
 
 User Can Log out
     [Documentation]  Once user is logged in and done with Labelf; being able to log out
     [Tags]  Regression
     Navigate to log out
-    #hej
+    #Här behövs en loop(forloop typ) som börjar om testet, totalt 10 ggr skall det köras innan det kan gå vidare till sista steget.
+
+#Calculations For Test
+ #   [Documentation]  Once dataset has been upploaded to Labelf, time is added to total time
+  #  [Tags]  Regression
+
+    #Här behöver vi köra calculate_average.py och ta ut en log på variabeln.
